@@ -9,26 +9,46 @@ public class ZigZagConversion {
 
     public String convert(String s, int numRows) {
 
-        if (numRows == 1) {
+        if(numRows == 1) {
             return s;
         }
 
-        String[] res = new String[numRows];
+        StringBuilder sb = new StringBuilder();
 
-        int i = 0, j, gap = numRows - 2;
-        while (i < s.length()) {
-            for (j = 0; i < s.length() && j < numRows; ++j) {
-                res[j] += s.charAt(i++);
+        // 顺序存放下标
+        int[] indexs = new int[s.length()];
+
+        int n = 0;
+        for(int i = 0; i < numRows; i++) {
+            // 一行一行来
+            for(int j = 0; ; j++) {
+                // 计算每个列的下标值
+                if(j % 2 == 0) {
+                    // 偶数列
+                    int index = i + (numRows - 1) * j;
+                    if(index >= s.length()) {
+                        break;
+                    }
+                    indexs[n++] = index;
+                } else if(i > 0){
+                    // 奇数列
+                    int index = i + (numRows - 1) * (j + 1) - 2 * i;
+                    if(index >= s.length()) {
+                        break;
+                    }
+                    if(index > indexs[n - 1]) {
+                        indexs[n++] = index;
+                    }
+                }
             }
-            for (j = gap; i < s.length() && j > 0; --j) {
-                res[j] += s.charAt(i++);
-            }
+
         }
-        StringBuilder str = new StringBuilder();
-        for (i = 0; i < numRows; i++) {
-            str.append(res[i]);
+
+        for (final int i : indexs) {
+            sb.append(s.charAt(i));
         }
-        return str.toString();
+
+        return sb.toString();
 
     }
 
@@ -37,7 +57,7 @@ public class ZigZagConversion {
         ZigZagConversion zzc = new ZigZagConversion();
 
         String s = "PAYPALISHIRING";
-        int numRows = 4;
+        int numRows = 3;
 
         System.out.println(zzc.convert(s, numRows));
 
