@@ -16,11 +16,11 @@ public class ReverseInteger {
      */
     public int reverse(int x) {
 
-        long lx = x;  // 考虑越界情况，先转换成long再说
-
-        if (lx < Integer.MIN_VALUE || lx > Integer.MAX_VALUE) {
+        if (x < Integer.MIN_VALUE || x > Integer.MAX_VALUE) {
             return 0;
         }
+
+        long lx = x;  // 考虑越界情况，先转换成long再说
 
         // 先统一转换成非负数处理
         boolean isNeg = lx < 0 ? true : false;
