@@ -1,60 +1,62 @@
 package org.zhenchao.leetcode.easy;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Implement atoi to convert a string to an integer.
- * 题目不难，坑比较多
+ * No.8
  *
- * @author Apache_xiaochao 2015-10-9 21:34:16
+ * @author zhenchao.wang 2016-09-10 16:06
+ * @version 1.0.0
  */
 public class StringToInteger {
 
-    public static void main(String[] args) {
-        StringToInteger sti = new StringToInteger();
-        System.out.println(sti.myAtoi("18446744073709551617"));
-    }
-
+    /**
+     * 主要考虑如下几种情况：
+     * 1.忽略首尾的空字符
+     * 2.以唯一一个“+”或“-”开头的视为正常情况
+     * 3.内部若有非数字字符，直接break
+     * 4.越界
+     *
+     * @param str
+     * @return
+     */
     public int myAtoi(String str) {
-        if (str == null) {
+        if (null == str || str.matches("^\\s*$")) {
             return 0;
         }
+
+        /*
+         * 预处理
+         */
         str = str.trim();
-        if ("".equals(str)) {
-            return 0;
-        }
-        char first = str.charAt(0);
-        int i = 0;
-        if (first == '+' || first == '-') {
-            i = 1;
-        } else if (first >= '0' && first <= '9') {
-            i = 0;
+        boolean isNeg;
+        if (str.startsWith("+")) {
+            isNeg = false;
+            str = str.substring(1);
+        } else if (str.startsWith("-")) {
+            isNeg = true;
+            str = str.substring(1);
         } else {
-            return 0;
+            isNeg = false;
         }
-        List<Character> list = new ArrayList<Character>();
-        while (i < str.length() && str.charAt(i) >= '0' && str.charAt(i) <= '9') {
-            list.add(str.charAt(i));
-            i++;
+
+        long l = 0;  // long即可，检测到整数越界直接break
+        for (int i = 0; i < str.length(); i++) {
+            String s = String.valueOf(str.charAt(i));
+            if (s.matches("[0-9]") && l <= Integer.MAX_VALUE) {
+                l = l * 10 + Long.parseLong(s);
+            } else {
+                break;
+            }
         }
-        if (list.size() == 0) {
-            return 0;
-        }
-        BigDecimal num = BigDecimal.ZERO;
-        BigDecimal base = BigDecimal.ONE;
-        for (int j = list.size() - 1; j >= 0; j--) {
-            num = num.add(base.multiply(new BigDecimal(list.get(j) - 48)));
-            base = base.multiply(new BigDecimal(10));
-        }
-        System.out.println(num);
-        if (first == '-') {
-            num = num.negate();
-            return num.compareTo(new BigDecimal(Integer.MIN_VALUE)) == -1 ? Integer.MIN_VALUE : num.intValue();
+
+        l = isNeg ? -l : l;
+        int result;
+        if (isNeg) {
+            result = l < Integer.MIN_VALUE ? Integer.MIN_VALUE : (int) l;
         } else {
-            return num.compareTo(new BigDecimal(Integer.MAX_VALUE)) == 1 ? Integer.MAX_VALUE : num.intValue();
+            result = l > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) l;
         }
+
+        return result;
     }
 
 }
