@@ -1,56 +1,73 @@
 package org.zhenchao.leetcode.easy;
 
-import java.util.Scanner;
-
 /**
- * Write a function to find the longest common prefix string amongst an array of strings.
+ * No.14
  *
- * @author Apache_xiaochao 2015-9-26 19:16:11
+ * @author zhenchao.wang 2016-09-16 12:17
+ * @version 1.0.0
  */
 public class LongestCommonPrefix {
 
-    public static void main(String[] args) {
-        LongestCommonPrefix lcp = new LongestCommonPrefix();
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        String[] strs = new String[n];
-        for (int i = 0; i < n; i++) {
-            strs[i] = sc.next();
-        }
-        System.out.println("前缀：" + lcp.longestCommonPrefix(strs));
-    }
+    /**
+     * 纵向扫描法
+     *
+     * @param strs
+     * @return
+     */
+    public String longestCommonPrefixByLongitudinalScan(String[] strs) {
 
-    public String longestCommonPrefix(String[] strs) {
-
-        if (strs == null || strs.length == 0) {
+        if (null == strs || strs.length == 0 || strs[0].length() == 0) {
             return "";
         }
 
-        /*
-         * 基本思想也还是当前前缀与每个字符串进行对比的过程
-         * 只是每次只需要对比前缀长度个字符即可，这样会极大的减少计算量
-         */
-        String prefix = strs[0];
-        int minLen = prefix.length();
-        for (int i = 1; i < strs.length; i++) {
-            String str = strs[i];
-            minLen = Math.min(minLen, str.length());
-            int tmpLen = 0;
-            for (int j = 0; j < minLen; j++) {
-                if (prefix.charAt(j) == str.charAt(j)) {
-                    tmpLen++;
-                } else {
-                    break;
+        if (strs.length == 1) {
+            return strs[0];
+        }
+
+        StringBuilder prefix = new StringBuilder();
+        int n = 0;
+        while (true) {
+            for (int i = 1; i < strs.length; i++) {
+                if (strs[i].length() == 0 ||
+                        strs[i - 1].length() == n || strs[i].length() == n ||
+                        strs[i - 1].charAt(n) != strs[i].charAt(n)) {
+                    return prefix.toString();
                 }
             }
-            if (tmpLen == 0) {
-                return "";
+            prefix.append(strs[0].charAt(n++));
+        }
+    }
+
+    /**
+     * 横向扫描法
+     *
+     * @param strs
+     * @return
+     */
+    public String longestCommonPrefixByTransverseScan(String[] strs) {
+        if (null == strs || strs.length == 0) {
+            return "";
+        }
+
+        if (strs.length == 1) {
+            return strs[0];
+        }
+
+        String prefix = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            StringBuilder sb = new StringBuilder();
+            for (int j = 0; j < prefix.length() && j < strs[i].length(); j++) {
+                if (prefix.charAt(j) != strs[i].charAt(j)) {
+                    prefix = sb.toString();
+                    break;
+                }
+                sb.append(prefix.charAt(j));
             }
-            minLen = tmpLen;
-            prefix = prefix.substring(0, tmpLen);
+            // 处理str[i]正好是最长公共前缀的情况
+            prefix = prefix.length() > strs[i].length() ? strs[i] : prefix;
+
         }
         return prefix;
-
     }
 
 }
