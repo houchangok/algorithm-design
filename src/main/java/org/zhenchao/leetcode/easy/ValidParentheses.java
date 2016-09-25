@@ -1,70 +1,58 @@
 package org.zhenchao.leetcode.easy;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
 /**
- * Given a string containing just the characters '(', ')', '{', '}', '[' and ']'<br>
- * determine if the input string is valid.
+ * No.20
  *
- * @author Apache_xiaochao 2015-9-27 16:46:52
+ * @author zhenchao.wang 2016-09-25 10:52
+ * @version 1.0.0
  */
 public class ValidParentheses {
 
-    private Set<Character> left  = new HashSet<Character>() {
-        {
-            this.add('(');
-            this.add('{');
-            this.add('[');
-        }
-    };
-    private Set<Character> right = new HashSet<Character>() {
-        {
-            this.add(')');
-            this.add('}');
-            this.add(']');
-        }
-    };
-
     public boolean isValid(String s) {
-        boolean valid = false;
-        if (s == null) {
-            return valid;
+
+        if (null == s || "".equals(s) || s.length() == 1) {
+            return false;
         }
-        s = s.replaceAll("\\s+", "");
-        if ("".equals(s)) {
-            return true;
-        }
-        Stack<Character> stack = new Stack<Character>();
+
+        Set<Character> left = new HashSet<Character>() {
+            {
+                add('{'); add('('); add('[');
+            }
+        };
+
+        Map<Character, Character> pair = new HashMap<Character, Character>() {
+            {
+                put('{', '}'); put('(', ')'); put('[', ']');
+            }
+        };
+
+        Stack<Character> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (this.left.contains(c)) {
+            if (left.contains(c)) {
                 stack.add(c);
-            } else {
-                if (stack.isEmpty()) {
-                    return false;
-                }
-                char r = stack.pop();
-                if (c == ')') {
-                    if (r != '(') {
-                        return false;
-                    }
-                } else if (c == '}') {
-                    if (r != '{') {
-                        return false;
-                    }
-                } else if (c == ']') {
-                    if (r != '[') {
-                        return false;
-                    }
-                }
+                continue;
             }
+
+            if (stack.size() == 0 || !pair.get(stack.pop()).equals(c)) {
+                return false;
+            }
+
         }
-        if (stack.isEmpty()) {
-            valid = true;
-        }
-        return valid;
+
+        return stack.size() == 0 ? true : false;
+    }
+
+    public static void main(String[] args) {
+        ValidParentheses vp = new ValidParentheses();
+        String str = "[])";
+        System.out.println(vp.isValid(str));
     }
 
 }
