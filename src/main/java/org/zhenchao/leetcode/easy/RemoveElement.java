@@ -4,11 +4,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * Remove Element
- * Given an array and a value, remove all instances of that value in place and return the new length.
- * The order of elements can be changed. It doesn't matter what you leave beyond the new length.
+ * N0.27
  *
- * @author Apache_xiaochao 2015-9-28 21:28:35
+ * @author zhenchao.wang 2016-10-15 11:50:30
  */
 public class RemoveElement {
 
@@ -27,23 +25,19 @@ public class RemoveElement {
     }
 
     public int removeElement(int[] nums, int val) {
-
-        if (nums == null || nums.length == 0) {
+        if (nums.length == 0) {
             return 0;
         }
-        int left = 0;
+
         int right = nums.length - 1;
-        while (left <= right) {
+        for (int left = 0; left <= right; left++) {
+            // 保证left始终指向最后一个非目标元素
             while (right >= 0 && nums[right] == val) {
                 right--;
             }
-            if (nums[left] == val && right > left) {
-                int tmp = nums[left];
-                nums[left] = nums[right];
-                nums[right] = tmp;
-                right--;
+            if (nums[left] == val && left < right) {
+                nums[left] = nums[right--]; // 无需考虑组织顺序
             }
-            left++;
         }
 
         return right + 1;

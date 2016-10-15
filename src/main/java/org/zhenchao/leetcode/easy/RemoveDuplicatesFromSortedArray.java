@@ -1,45 +1,35 @@
 package org.zhenchao.leetcode.easy;
 
+import java.util.Arrays;
 
 /**
- * Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
- * Do not allocate extra space for another array, you must do this in place with constant memory.
+ * No.26
  *
- * @author Apache_xiaochao 2015-9-27 17:54:47
+ * @author zhenchao.wang 2016-10-15 10:03
+ * @version 1.0.0
  */
 public class RemoveDuplicatesFromSortedArray {
 
-    /**
-     * 用两个指针，当出现不重复的数的时候两个指针分别右移一个单位，同时两个指针所指的元素交换，否则仅第二个指针右移一个单位
-     *
-     * @param nums
-     *
-     * @return
-     */
     public int removeDuplicates(int[] nums) {
-
-        if (nums == null || nums.length == 0) {
+        if (nums.length == 0) {
             return 0;
         }
 
-        int firstIndex = 0;
-        int secondIndex = 0;
-        int curr = nums[0];
+        int index = 0;  // 兼记录当前最新发现的不重复元素的个数和目标位置
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i] == curr) {
-                secondIndex++;
-            } else {
-                firstIndex++;
-                secondIndex++;
-                curr = nums[i];
-                int tmp = nums[firstIndex];
-                nums[firstIndex] = nums[secondIndex];
-                nums[secondIndex] = tmp;
+            if (nums[i] != nums[index]) {
+                nums[++index] = nums[i];
             }
         }
 
-        return firstIndex + 1;
+        return index + 1;
+    }
 
+    public static void main(String[] args) {
+        RemoveDuplicatesFromSortedArray rd = new RemoveDuplicatesFromSortedArray();
+        int[] a = {1};
+        System.out.println(rd.removeDuplicates(a));
+        System.out.println(Arrays.toString(a));
     }
 
 }
