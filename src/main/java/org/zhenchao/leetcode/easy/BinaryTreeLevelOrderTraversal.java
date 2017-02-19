@@ -1,6 +1,6 @@
 package org.zhenchao.leetcode.easy;
 
-import org.zhenchao.common.TreeNode;
+import org.zhenchao.leetcode.common.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -37,11 +37,11 @@ public class BinaryTreeLevelOrderTraversal {
 
             if (lv > llist.size() - 1) {
                 list = new ArrayList<Integer>();
-                list.add(node.val);
+                list.add(node.value);
                 llist.add(list);
             } else {
                 list = llist.get(lv);
-                list.add(node.val);
+                list.add(node.value);
                 llist.set(lv, list);
             }
 

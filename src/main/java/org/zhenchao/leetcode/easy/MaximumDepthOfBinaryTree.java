@@ -1,6 +1,6 @@
 package org.zhenchao.leetcode.easy;
 
-import org.zhenchao.common.TreeNode;
+import org.zhenchao.leetcode.common.TreeNode;
 
 /**
  * Given a binary tree, find its maximum depth.

@@ -1,4 +1,4 @@
-package org.zhenchao.common;
+package org.zhenchao.leetcode.common;
 
 /**
  * Definition for a binary tree node.
@@ -6,9 +6,14 @@ package org.zhenchao.common;
  * @author zhenchao.wang 2015-8-28 16:58:40
  */
 public class TreeNode {
-    public int      val;
+
+    public int value;
+
     public TreeNode left;
+
     public TreeNode right;
 
-    public TreeNode(int x) { this.val = x; }
+    public TreeNode(int value) {
+        this.value = value;
+    }
 }

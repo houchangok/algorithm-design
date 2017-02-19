@@ -1,6 +1,6 @@
 package org.zhenchao.leetcode.easy;
 
-import org.zhenchao.common.TreeNode;
+import org.zhenchao.leetcode.common.TreeNode;
 
 /**
  * Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
@@ -25,7 +25,7 @@ public class SymmetricTree {
             return false;
         }
 
-        return left.val == right.val
+        return left.value == right.value
                 && this.check(left.left, right.right)
                 && this.check(left.right, right.left);
 

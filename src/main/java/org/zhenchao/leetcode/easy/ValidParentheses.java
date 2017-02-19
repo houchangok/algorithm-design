@@ -32,7 +32,7 @@ public class ValidParentheses {
             }
         };
 
-        Stack<Character> stack = new Stack<>();
+        Stack<Character> stack = new Stack<Character>();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (left.contains(c)) {

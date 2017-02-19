@@ -1,4 +1,4 @@
-package org.zhenchao.common;
+package org.zhenchao.leetcode.common;
 
 /**
  * Definition for singly-linked list.
@@ -7,11 +7,12 @@ package org.zhenchao.common;
  */
 public class ListNode {
 
-    public int      val;
+    public int value;
+
     public ListNode next;
 
-    public ListNode(int x) {
-        this.val = x;
+    public ListNode(int value) {
+        this.value = value;
     }
 
 }

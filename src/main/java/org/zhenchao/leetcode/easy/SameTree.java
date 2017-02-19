@@ -1,7 +1,7 @@
 package org.zhenchao.leetcode.easy;
 
 
-import org.zhenchao.common.TreeNode;
+import org.zhenchao.leetcode.common.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -23,7 +23,7 @@ public class SameTree {
             return false;
         } else if (q == null) {
             return false;
-        } else if (p.val != q.val) {
+        } else if (p.value != q.value) {
             return false;
         } else {
             return this.isSameTree(p.left, q.left) && this.isSameTree(p.right, q.right);
@@ -53,7 +53,7 @@ public class SameTree {
                 return false;
             } else if (pnode == null && qnode == null) {
                 continue;
-            } else if (pnode.val != qnode.val) {
+            } else if (pnode.value != qnode.value) {
                 return false;
             } else {
                 pQueue.offer(pnode.left);
