@@ -65,4 +65,12 @@ public class SortAlgorithmTest {
         Assert.assertTrue(ms.isSorted(array));
     }
 
+    @Test
+    public void quickSortTest() throws Exception {
+        QuickSort qs = new QuickSort();
+        qs.sort(array);
+        qs.show(array);
+        Assert.assertTrue(qs.isSorted(array));
+    }
+
 }
