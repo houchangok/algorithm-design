@@ -21,7 +21,7 @@ public class SortAlgorithmTest {
         // 构造随机数组
         Random random = new Random(System.currentTimeMillis());
         for (int i = 0; i < SIZE; i++) {
-            array[i] = random.nextInt(1000);
+            array[i] = random.nextInt(2000) - 1000;
         }
     }
 
@@ -47,6 +47,22 @@ public class SortAlgorithmTest {
         ss.sort(array);
         ss.show(array);
         Assert.assertTrue(ss.isSorted(array));
+    }
+
+    @Test
+    public void t2bMergeSortTest() throws Exception {
+        TopToBottomMergeSort ms = new TopToBottomMergeSort();
+        ms.sort(array);
+        ms.show(array);
+        Assert.assertTrue(ms.isSorted(array));
+    }
+
+    @Test
+    public void b2tMergeSortTest() throws Exception {
+        BottomToTopMergeSort ms = new BottomToTopMergeSort();
+        ms.sort(array);
+        ms.show(array);
+        Assert.assertTrue(ms.isSorted(array));
     }
 
 }
