@@ -24,46 +24,45 @@ public class Queue<T> implements Iterable<T> {
     }
 
     /**
-     * Returns true if this queue is empty.
+     * 判断当前队列是否为空
      *
-     * @return {@code true} if this queue is empty; {@code false} otherwise
+     * @return
      */
     public boolean isEmpty() {
         return first == null;
     }
 
     /**
-     * Returns the number of items in this queue.
+     * 返回当前队列的大小
      *
-     * @return the number of items in this queue
+     * @return
      */
     public int size() {
-        return size;
+        return this.size;
     }
 
     /**
-     * Returns the item least recently added to this queue.
+     * 返回队首元素
      *
-     * @return the item least recently added to this queue
-     * @throws NoSuchElementException if this queue is empty
+     * @return
      */
     public T peek() {
         if (this.isEmpty()) {
-            throw new NoSuchElementException("Queue underflow");
+            throw new NoSuchElementException("Queue is empty!");
         }
         return first.value;
     }
 
     /**
-     * Adds the item to this queue.
+     * 入队列
      *
-     * @param value the item to add
+     * @param value
      */
     public void enqueue(T value) {
         Node<T> pre = last;
         last = new Node<T>(value);
         last.next = null;
-        if (isEmpty()) {
+        if (this.isEmpty()) {
             first = last;
         } else {
             pre.next = last;
@@ -72,14 +71,13 @@ public class Queue<T> implements Iterable<T> {
     }
 
     /**
-     * Removes and returns the item on this queue that was least recently added.
+     * 出队列
      *
-     * @return the item on this queue that was least recently added
-     * @throws NoSuchElementException if this queue is empty
+     * @return
      */
     public T dequeue() {
         if (this.isEmpty()) {
-            throw new NoSuchElementException("Queue underflow");
+            throw new NoSuchElementException("Queue is empty");
         }
         T value = first.value;
         first = first.next;
@@ -90,11 +88,7 @@ public class Queue<T> implements Iterable<T> {
         return value;
     }
 
-    /**
-     * Returns a string representation of this queue.
-     *
-     * @return the sequence of items in FIFO order, separated by spaces
-     */
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (T value : this) {
@@ -105,9 +99,9 @@ public class Queue<T> implements Iterable<T> {
     }
 
     /**
-     * Returns an iterator that iterates over the items in this queue in FIFO order.
+     * 返回一个迭FIFO代器
      *
-     * @return an iterator that iterates over the items in this queue in FIFO order
+     * @return
      */
     public Iterator<T> iterator() {
         return new ListIterator<T>(first);

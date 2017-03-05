@@ -11,79 +11,73 @@ import java.util.NoSuchElementException;
  */
 public class Stack<T> implements Iterable<T> {
 
-    private Node<T> first;     // top of stack
+    private Node<T> top;     // top of stack
 
     private int size;          // size of the stack
 
     public Stack() {
-        first = null;
+        top = null;
         size = 0;
     }
 
     /**
-     * Returns true if this stack is empty.
+     * 判空
      *
-     * @return true if this stack is empty; false otherwise
+     * @return
      */
     public boolean isEmpty() {
-        return first == null;
+        return top == null;
     }
 
     /**
-     * Returns the number of items in this stack.
+     * 返回大小
      *
-     * @return the number of items in this stack
+     * @return
      */
     public int size() {
         return size;
     }
 
     /**
-     * Adds the item to this stack.
+     * 入栈
      *
-     * @param value the item to add
+     * @param value
      */
     public void push(T value) {
-        Node<T> pre = first;
-        first = new Node<T>(value);
-        first.next = pre;
+        Node<T> pre = top;
+        top = new Node<T>(value);
+        top.next = pre;
         size++;
     }
 
     /**
-     * Removes and returns the item most recently added to this stack.
+     * 出栈并删除栈顶元素
      *
-     * @return the item most recently added
-     * @throws NoSuchElementException if this stack is empty
+     * @return
      */
     public T pop() {
         if (this.isEmpty()) {
-            throw new NoSuchElementException("Stack underflow");
+            throw new NoSuchElementException("Stack is empty!");
         }
-        T value = first.value;        // save item to return
-        first = first.next;            // delete first node
+        T value = top.value;        // save item to return
+        top = top.next;            // delete top node
         size--;
         return value;                   // return the saved item
     }
 
     /**
-     * Returns (but does not remove) the item most recently added to this stack.
+     * 出栈但不删除栈顶元素
      *
-     * @return the item most recently added to this stack
-     * @throws NoSuchElementException if this stack is empty
+     * @return
      */
     public T peek() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Stack underflow");
+            throw new NoSuchElementException("Stack is empty!");
         }
-        return first.value;
+        return top.value;
     }
 
-    /**
-     * Returns a string representation of this stack.
-     *
-     * @return the sequence of items in this stack in LIFO order, separated by spaces
-     */
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (T value : this) {
@@ -94,19 +88,14 @@ public class Stack<T> implements Iterable<T> {
     }
 
     /**
-     * Returns an iterator to this stack that iterates through the items in LIFO order.
+     * 返回一个LIFO迭代器
      *
-     * @return an iterator to this stack that iterates through the items in LIFO order
+     * @return
      */
     public Iterator<T> iterator() {
-        return new ListIterator<T>(first);
+        return new ListIterator<T>(top);
     }
 
-    /**
-     * 迭代器
-     *
-     * @param <T>
-     */
     private class ListIterator<T> implements Iterator<T> {
         private Node<T> current;
 
