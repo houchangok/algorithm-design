@@ -8,17 +8,21 @@ package org.zhenchao.common;
  */
 public class MaxPriorityQueue<T extends Comparable<T>> implements PriorityQueue<T> {
 
-    private T[] array[];  // 利用数组形式存储小端堆
+    private T[] array;  // 利用数组形式存储小端堆
 
-    private int N = 0;
+    private int size = 0;  // 0位置不存放元素
 
     public MaxPriorityQueue() {
     }
 
     public MaxPriorityQueue(int size) {
+        this.array = (T[]) new Comparable[size + 1];
+        this.size = size;
     }
 
     public MaxPriorityQueue(T[] init) {
+        this.array = init;
+        this.size = this.array.length - 1;
     }
 
     @Override
@@ -28,12 +32,12 @@ public class MaxPriorityQueue<T extends Comparable<T>> implements PriorityQueue<
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return this.size == 0;
     }
 
     @Override
     public int size() {
-        return 0;
+        return this.size;
     }
 
     /**
@@ -42,7 +46,10 @@ public class MaxPriorityQueue<T extends Comparable<T>> implements PriorityQueue<
      * @return
      */
     public T max() {
-        return null;
+        if(this.isEmpty()) {
+            return null;
+        }
+        return array[1];
     }
 
     /**
