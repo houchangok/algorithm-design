@@ -8,7 +8,7 @@ package org.zhenchao.common;
  */
 public class MaxHeap<T extends Comparable<T>> extends BasicOperation<T> {
 
-    private T[] array;
+    public T[] array;
 
     /**
      * 上浮
@@ -29,24 +29,64 @@ public class MaxHeap<T extends Comparable<T>> extends BasicOperation<T> {
      * 如果从数组顶端删除最大元素，同时将最后一个元素放置到顶端，然后通过下沉将该元素达到合适的位置
      *
      * @param n
+     * @param size
      */
-    public void sink(int n) {
+    public void sink(int n, int size) {
         int k = n;
-        while (2 * k <= array.length) {
-            int i = 2 * k;
-            if (this.less(array[k], array[i])) {
-                this.exchange(array, k, i);
-                k = i;
-            }
-            int j = 2 * k + 1;
-            if (j > n) {
-                break;
-            }
-            if (this.less(array[k], array[j])) {
-                this.exchange(array, k, j);
-                k = j;
+        while (2 * k < size) {
+            int i = 2 * k, j = 2 * k + 1;
+            if (j > size) {
+                // 如果只有一个元素，则直接与2n比较
+                if (this.less(array[k], array[i])) {
+                    this.exchange(array, k, i);
+                    k = i;
+                } else {
+                    break;
+                }
+            } else {
+                // 和其中较大的元素交换
+                int m = this.less(array[i], array[j]) ? j : i;
+                if (this.less(array[k], array[m])) {
+                    this.exchange(array, k, m);
+                    k = m;
+                } else {
+                    break;
+                }
             }
         }
+    }
+
+    /**
+     * 校验是不是最大堆
+     *
+     * @return
+     */
+    public boolean isMaxHeap() {
+        return this.isMaxHeap(1, array.length);
+    }
+
+    /**
+     * 校验是不是最大堆
+     *
+     * @param start
+     * @param end
+     * @return
+     */
+    public boolean isMaxHeap(int start, int end) {
+        int n = start;
+        while (2 * n < end) {
+            if (this.less(array[n], array[2 * n])) {
+                System.out.println(String.format("index : %d < %d, value : %s < %s", n, 2 * n, array[n], array[2 * n]));
+                return false;
+            }
+            int m = 2 * n + 1;
+            if (m < end && this.less(array[n], array[m])) {
+                System.out.println(String.format("index : %d < %d, value : %s < %s", n, m, array[n], array[m]));
+                return false;
+            }
+            n++;
+        }
+        return true;
     }
 
 }

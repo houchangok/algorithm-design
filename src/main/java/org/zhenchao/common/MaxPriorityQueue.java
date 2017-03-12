@@ -1,5 +1,7 @@
 package org.zhenchao.common;
 
+import java.lang.reflect.Array;
+
 /**
  * 最大优先级队列
  *
@@ -8,36 +10,35 @@ package org.zhenchao.common;
  */
 public class MaxPriorityQueue<T extends Comparable<T>> implements PriorityQueue<T> {
 
-    private T[] array;  // 利用数组形式存储小端堆
+    private MaxHeap<T> maxHeap = new MaxHeap<T>();  // 利用数组形式存储大端堆
 
-    private int size = 0;  // 0位置不存放元素
+    private int position = 0;  // 0位置不存放元素
 
     public MaxPriorityQueue() {
     }
 
-    public MaxPriorityQueue(int size) {
-        this.array = (T[]) new Comparable[size + 1];
-        this.size = size;
+    public MaxPriorityQueue(Class<T> type, int size) {
+        maxHeap.array = (T[]) Array.newInstance(type, size);
     }
 
     public MaxPriorityQueue(T[] init) {
-        this.array = init;
-        this.size = this.array.length - 1;
+        this.maxHeap.array = init;
     }
 
     @Override
     public void insert(T value) {
-
+        maxHeap.array[++position] = value;
+        maxHeap.swim(position);
     }
 
     @Override
     public boolean isEmpty() {
-        return this.size == 0;
+        return this.position == 0;
     }
 
     @Override
     public int size() {
-        return this.size;
+        return this.position;
     }
 
     /**
@@ -46,10 +47,10 @@ public class MaxPriorityQueue<T extends Comparable<T>> implements PriorityQueue<
      * @return
      */
     public T max() {
-        if(this.isEmpty()) {
+        if (this.isEmpty()) {
             return null;
         }
-        return array[1];
+        return maxHeap.array[1];
     }
 
     /**
@@ -58,7 +59,14 @@ public class MaxPriorityQueue<T extends Comparable<T>> implements PriorityQueue<
      * @return
      */
     public T delMax() {
-        return null;
+        if (this.isEmpty()) {
+            return null;
+        }
+        T max = maxHeap.array[1];
+        maxHeap.exchange(maxHeap.array, 1, position);
+        position--;
+        maxHeap.sink(1, position);
+        return max;
     }
 
 }

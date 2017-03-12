@@ -37,9 +37,30 @@ public abstract class BasicOperation<T extends Comparable<T>> {
      * @param a
      */
     public void show(Comparable<T>[] a) {
-        for (int i = 0; i < a.length; i++) {
+        this.show(a, 0);
+    }
+
+    /**
+     * 打印
+     *
+     * @param a
+     * @param start
+     */
+    public void show(Comparable<T>[] a, int start) {
+        this.show(a, start, a.length);
+    }
+
+    /**
+     * 打印
+     *
+     * @param a
+     * @param start
+     * @param end
+     */
+    public void show(Comparable<T>[] a, int start, int end) {
+        for (int i = start; i < end; i++) {
             System.out.print(a[i] + "\t");
-            if ((i + 1) % 40 == 0) {
+            if ((i + 1) % 40 == 0 || i == (end - 1)) {
                 System.out.println();
             }
         }

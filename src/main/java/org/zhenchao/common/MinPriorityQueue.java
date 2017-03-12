@@ -2,6 +2,7 @@ package org.zhenchao.common;
 
 /**
  * 最小优先级队列
+ * TODO 未实现 2017-3-12 14:21:03
  *
  * @author zhenchao.wang 2017-03-05 14:22
  * @version 1.0.0
@@ -23,7 +24,6 @@ public class MinPriorityQueue<T extends Comparable<T>> implements PriorityQueue<
 
     @Override
     public void insert(T value) {
-
     }
 
     @Override
