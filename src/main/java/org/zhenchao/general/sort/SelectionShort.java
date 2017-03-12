@@ -6,10 +6,10 @@ package org.zhenchao.general.sort;
  * @author zhenchao.wang 2017-02-19 15:24
  * @version 1.0.0
  */
-public class SelectionShort extends AbstractSortAlgorithm<Integer> {
+public class SelectionShort<T extends Comparable<T>> extends AbstractSortAlgorithm<T> {
 
     @Override
-    public void sort(Integer[] a) {
+    public void sort(T[] a) {
         for (int i = 0; i < a.length; i++) {
             int min = i;
             for (int j = i + 1; j < a.length; j++) {
@@ -19,7 +19,7 @@ public class SelectionShort extends AbstractSortAlgorithm<Integer> {
                 }
             }
             // 交换当前元素与最小元素的位置
-            this.exch(a, i, min);
+            this.exchange(a, i, min);
         }
     }
 

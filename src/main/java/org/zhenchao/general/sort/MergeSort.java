@@ -1,12 +1,14 @@
 package org.zhenchao.general.sort;
 
 /**
+ * 归并排序
+ *
  * @author zhenchao.wang 2017-02-26 16:33
  * @version 1.0.0
  */
-public abstract class MergeSort extends AbstractSortAlgorithm<Integer> {
+public abstract class MergeSort<T extends Comparable<T>> extends AbstractSortAlgorithm<T> {
 
-    protected Integer[] aux;
+    protected T[] aux;
 
     /**
      * 对一个数组merge有序
@@ -17,7 +19,7 @@ public abstract class MergeSort extends AbstractSortAlgorithm<Integer> {
      * @param mid
      * @param right
      */
-    protected void merge(Integer[] a, int left, int mid, int right) {
+    protected void merge(T[] a, int left, int mid, int right) {
 
         // 先复制一份数组a，用于比较
         for (int i = 0; i < a.length; i++) {

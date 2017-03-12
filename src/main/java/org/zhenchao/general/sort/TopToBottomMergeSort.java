@@ -7,7 +7,7 @@ package org.zhenchao.general.sort;
  * @author zhenchao.wang 2017-02-19 19:05
  * @version 1.0.0
  */
-public class TopToBottomMergeSort extends MergeSort {
+public class TopToBottomMergeSort extends MergeSort<Integer> {
 
     /**
      * 分治思想

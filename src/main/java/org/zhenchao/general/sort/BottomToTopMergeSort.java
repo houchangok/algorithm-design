@@ -7,7 +7,7 @@ package org.zhenchao.general.sort;
  * @author zhenchao.wang 2017-02-26 16:30
  * @version 1.0.0
  */
-public class BottomToTopMergeSort extends MergeSort {
+public class BottomToTopMergeSort extends MergeSort<Integer> {
 
     @Override
     public void sort(Integer[] a) {

@@ -6,7 +6,7 @@ package org.zhenchao.general.sort;
  * @author zhenchao.wang 2017-02-26 20:13
  * @version 1.0.0
  */
-public class QuickSort extends AbstractSortAlgorithm<Integer> {
+public class QuickSort<T extends Comparable<T>> extends AbstractSortAlgorithm<T> {
 
     /**
      * 每次都选择当前数组的第一个元素作为标杆，让数组中该数左边的元素都不大于该数，右边的数都不小于该数
@@ -16,23 +16,23 @@ public class QuickSort extends AbstractSortAlgorithm<Integer> {
      * @param right
      * @return
      */
-    public int partition(Integer[] a, int left, int right) {
-        int tmp = a[left];
+    public int partition(T[] a, int left, int right) {
+        T tmp = a[left];
         int i = left, j = right;
         while (i < j) {
             // 从右边开始
-            while (a[j] >= tmp && j > left) {
+            while (a[j].compareTo(tmp) >= 0 && j > left) {
                 j--;
             }
             // 然后左边
-            while (a[i] <= tmp && i < right) {
+            while (a[i].compareTo(tmp) <= 0 && i < right) {
                 i++;
             }
             if (i < j) {
-                this.exch(a, i, j);
+                this.exchange(a, i, j);
             }
         }
-        this.exch(a, left, j);
+        this.exchange(a, left, j);
         return j;
     }
 
@@ -43,7 +43,7 @@ public class QuickSort extends AbstractSortAlgorithm<Integer> {
      * @param left
      * @param right
      */
-    private void sort(Integer[] a, int left, int right) {
+    private void sort(T[] a, int left, int right) {
         if (right <= 0 || left >= right) {
             return;
         }
@@ -53,7 +53,7 @@ public class QuickSort extends AbstractSortAlgorithm<Integer> {
     }
 
     @Override
-    public void sort(Integer[] a) {
+    public void sort(T[] a) {
         this.sort(a, 0, a.length - 1);
     }
 

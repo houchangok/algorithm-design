@@ -27,7 +27,7 @@ public class SortAlgorithmTest {
 
     @Test
     public void selectionSortTest() throws Exception {
-        SelectionShort ss = new SelectionShort();
+        SelectionShort<Integer> ss = new SelectionShort<Integer>();
         ss.sort(array);
         ss.show(array);
         Assert.assertTrue(ss.isSorted(array));
@@ -35,7 +35,7 @@ public class SortAlgorithmTest {
 
     @Test
     public void insertionSortTest() throws Exception {
-        InsertionSort is = new InsertionSort();
+        InsertionSort<Integer> is = new InsertionSort<Integer>();
         is.sort(array);
         is.show(array);
         Assert.assertTrue(is.isSorted(array));
@@ -43,7 +43,7 @@ public class SortAlgorithmTest {
 
     @Test
     public void shellSortTest() throws Exception {
-        ShellSort ss = new ShellSort();
+        ShellSort<Integer> ss = new ShellSort<Integer>();
         ss.sort(array);
         ss.show(array);
         Assert.assertTrue(ss.isSorted(array));
@@ -67,7 +67,7 @@ public class SortAlgorithmTest {
 
     @Test
     public void quickSortTest() throws Exception {
-        QuickSort qs = new QuickSort();
+        QuickSort<Integer> qs = new QuickSort<Integer>();
         qs.sort(array);
         qs.show(array);
         Assert.assertTrue(qs.isSorted(array));
