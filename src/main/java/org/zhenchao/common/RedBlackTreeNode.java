@@ -18,18 +18,14 @@ public class RedBlackTreeNode<K extends Comparable<K>, V> {
     /** 父节点指向该结点的颜色，true为红色，false为黑色 */
     public boolean color;
 
-    public RedBlackTreeNode(K key, V value, RedBlackTreeNode<K, V> left, RedBlackTreeNode<K, V> right, boolean color) {
+    /** 子树的节点数目 */
+    public int size;
+
+    public RedBlackTreeNode(K key, V value, boolean color, int size) {
         this.key = key;
         this.value = value;
-        this.left = left;
-        this.right = right;
         this.color = color;
+        this.size = size;
     }
 
-    public boolean isRed(RedBlackTreeNode<K, V> node) {
-        if (null == node) {
-            return false;
-        }
-        return node.color;
-    }
 }
