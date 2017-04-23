@@ -1,7 +1,7 @@
 package org.zhenchao.leetcode.easy;
 
 
-import org.zhenchao.leetcode.common.ListNode;
+import org.zhenchao.leetcode.basic.ListNode;
 
 /**
  * Write a program to find the node at which the intersection of two singly linked lists begins.

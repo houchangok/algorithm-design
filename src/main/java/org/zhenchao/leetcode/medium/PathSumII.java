@@ -1,7 +1,7 @@
 package org.zhenchao.leetcode.medium;
 
 
-import org.zhenchao.leetcode.common.TreeNode;
+import org.zhenchao.leetcode.basic.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package org.zhenchao.leetcode.easy;
 
-import org.zhenchao.leetcode.common.ListNode;
+import org.zhenchao.leetcode.basic.ListNode;
 
 /**
  * No.19

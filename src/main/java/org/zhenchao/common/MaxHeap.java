@@ -76,12 +76,12 @@ public class MaxHeap<T extends Comparable<T>> extends BasicOperation<T> {
         int n = start;
         while (2 * n < end) {
             if (this.less(array[n], array[2 * n])) {
-                System.out.println(String.format("index : %d < %d, value : %s < %s", n, 2 * n, array[n], array[2 * n]));
+                System.out.println(String.format("index : %d < %d, val : %s < %s", n, 2 * n, array[n], array[2 * n]));
                 return false;
             }
             int m = 2 * n + 1;
             if (m < end && this.less(array[n], array[m])) {
-                System.out.println(String.format("index : %d < %d, value : %s < %s", n, m, array[n], array[m]));
+                System.out.println(String.format("index : %d < %d, val : %s < %s", n, m, array[n], array[m]));
                 return false;
             }
             n++;

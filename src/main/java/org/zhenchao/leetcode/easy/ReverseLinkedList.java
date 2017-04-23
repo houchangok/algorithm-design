@@ -1,7 +1,7 @@
 package org.zhenchao.leetcode.easy;
 
 
-import org.zhenchao.leetcode.common.ListNode;
+import org.zhenchao.leetcode.basic.ListNode;
 
 /**
  * Reverse a singly linked list.
@@ -19,7 +19,7 @@ public class ReverseLinkedList {
         ReverseLinkedList rll = new ReverseLinkedList();
         ListNode root = rll.reverseList(n1);
         while (root != null) {
-            System.out.println(root.value);
+            System.out.println(root.val);
             root = root.next;
         }
     }

@@ -1,6 +1,6 @@
 package org.zhenchao.leetcode.easy;
 
-import org.zhenchao.leetcode.common.ListNode;
+import org.zhenchao.leetcode.basic.ListNode;
 
 /**
  * N0.21
@@ -22,7 +22,7 @@ public class MergeTwoSortedLists {
         // 构建起始点
         ListNode p1 = l1, p2 = l2;
         ListNode index;
-        if (p1.value <= p2.value) {
+        if (p1.val <= p2.val) {
             index = p1;
             p1 = l1.next;
         } else {
@@ -34,7 +34,7 @@ public class MergeTwoSortedLists {
 
         // 穿线
         while (null != p1 && null != p2) {
-            if (p1.value <= p2.value) {
+            if (p1.val <= p2.val) {
                 index.next = p1;
                 p1 = p1.next;
             } else {
@@ -76,7 +76,7 @@ public class MergeTwoSortedLists {
         ListNode header = mtsl.mergeTwoLists(l12, l21);
 
         while (null != header) {
-            System.out.println(header.value);
+            System.out.println(header.val);
             header = header.next;
         }
 

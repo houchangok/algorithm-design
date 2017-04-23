@@ -1,6 +1,6 @@
 package org.zhenchao.leetcode.easy;
 
-import org.zhenchao.leetcode.common.ListNode;
+import org.zhenchao.leetcode.basic.ListNode;
 
 /**
  * No.24
@@ -63,7 +63,7 @@ public class SwapNodesInPairs {
         SwapNodesInPairs snp = new SwapNodesInPairs();
         ListNode header = snp.swapPairs(l11);
         while (null != header) {
-            System.out.print(header.value + " ");
+            System.out.print(header.val + " ");
             header = header.next;
         }
     }

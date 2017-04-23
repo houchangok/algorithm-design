@@ -1,7 +1,7 @@
 package org.zhenchao.leetcode.easy;
 
 
-import org.zhenchao.leetcode.common.TreeNode;
+import org.zhenchao.leetcode.basic.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package org.zhenchao.leetcode.common;
+package org.zhenchao.leetcode.basic;
 
 /**
  * Definition for a binary tree node.
