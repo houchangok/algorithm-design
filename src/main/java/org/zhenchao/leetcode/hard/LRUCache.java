@@ -12,9 +12,11 @@ import java.util.Map;
  */
 public class LRUCache {
 
-    private int                capacity;  // Cache的大小
+    private int capacity;  // Cache的大小
+
     private Map<Integer, Node> keys;
-    private Node               root;
+
+    private Node root;
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
@@ -29,7 +31,6 @@ public class LRUCache {
      * 如果没有就返回-1，如果有的话就返回value，同时将结点置为最上面位置
      *
      * @param key
-     *
      * @return
      */
     public int get(int key) {
@@ -121,8 +122,8 @@ public class LRUCache {
  * @author Apache_xiaochao 2015-10-8 19:18:46
  */
 class Node {
-    int  key;
-    int  data;
+    int key;
+    int data;
     Node pre;
     Node next;
 

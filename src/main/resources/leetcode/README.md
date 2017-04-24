@@ -2,4 +2,6 @@
 
 ### 重点标记
 
-1. Longest Substring Without Repeating Characters
+- No.3 - Longest Substring Without Repeating Characters
+- No.4 - Median of Two Sorted Arrays
+
