@@ -15,7 +15,6 @@ public class ContainerWithMostWater {
      * @return
      */
     public int maxArea(int[] height) {
-
         int left = 0;  // 左指针
         int right = height.length - 1;  // 右指针
 
@@ -36,7 +35,6 @@ public class ContainerWithMostWater {
         }
 
         return max;
-
     }
 
 }
