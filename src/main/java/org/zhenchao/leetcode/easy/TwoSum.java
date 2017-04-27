@@ -1,11 +1,13 @@
 package org.zhenchao.leetcode.easy;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
- * No.1
- * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
- * You may assume that each input would have exactly one solution.
+ * No.1 Two Sum
  */
 public class TwoSum {
 
@@ -34,7 +36,6 @@ public class TwoSum {
      *
      * @param nums
      * @param target
-     *
      * @return
      */
     public int[] twoSum(int[] nums, int target) {
@@ -78,7 +79,6 @@ public class TwoSum {
      *
      * @param nums
      * @param target
-     *
      * @return
      */
     public int[] twoSum2(int[] nums, int target) {
