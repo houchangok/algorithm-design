@@ -12,24 +12,43 @@ import java.util.List;
  */
 public class ThreeSum {
 
+    /**
+     * Two Sum
+     *
+     * @param nums
+     * @param start
+     * @param target
+     * @return
+     */
     private List<List<Integer>> twoSum(int[] nums, int start, int target) {
         List<List<Integer>> list = new ArrayList<List<Integer>>();
         int left = start, right = nums.length - 1;
         while (left < right) {
             int value = nums[left] + nums[right];
-            if (value < target || nums[left + 1] == nums[left]) {
+            if (value < target) {
                 left++;
-            } else if (value > target || nums[right - 1] == nums[right]) {
+            } else if (value > target) {
                 right--;
             } else {
                 list.add(Arrays.asList(-target, nums[left], nums[right]));
                 left++;
+                // 去重
+                while (left < right && nums[left] == nums[left - 1]) left++;
+
                 right--;
+                // 去重
+                while (left < right && nums[right] == nums[right + 1]) right--;
             }
         }
         return list;
     }
 
+    /**
+     * 基于 Two Sum 解 Three Sum
+     *
+     * @param nums
+     * @return
+     */
     public List<List<Integer>> threeSum(int[] nums) {
         if (null == nums || nums.length < 3) {
             return new ArrayList<List<Integer>>();
@@ -39,6 +58,7 @@ public class ThreeSum {
         int pre = nums[0];
         for (int i = 0; i < nums.length - 2; i++) {
             if (i > 0 && nums[i] == pre) {
+                // 去重
                 continue;
             }
             pre = nums[i];
@@ -52,9 +72,9 @@ public class ThreeSum {
 
     public static void main(String[] args) {
         ThreeSum ts = new ThreeSum();
-        int[] nums = {-1, 0, 1, 2, -1, -4};
+        // int[] nums = {-1, 0, 1, 2, -1, -4};
         // int[] nums = {-2, 0, 0, 2, 2};
-        // int[] nums = {0, 0, 0};
+        int[] nums = {0, 0, 0};
         System.out.println(ts.threeSum(nums));
     }
 
