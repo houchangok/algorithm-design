@@ -1,6 +1,6 @@
 package org.zhenchao.leetcode.easy;
 
-import org.junit.Assert;
+import java.util.Arrays;
 
 /**
  * No.28 Implement strStr()
@@ -17,7 +17,7 @@ public class ImplementStrStr {
      * @param needle
      * @return
      */
-    public int strStr(String haystack, String needle) {
+    public int strStrWithDfa(String haystack, String needle) {
         int lenHay = haystack.length(), lenNeedle = needle.length();
         if (lenNeedle > lenHay) {
             return -1;
@@ -26,6 +26,9 @@ public class ImplementStrStr {
             return 0;
         }
         int[][] dfa = this.dfa(needle);
+        for (int i = 0; i < dfa.length; i++) {
+            System.out.println(Arrays.toString(dfa[i]));
+        }
         int i, j;
         for (i = 0, j = 0; i < lenHay && j < lenNeedle; i++) {
             j = dfa[haystack.charAt(i)][j];
@@ -55,6 +58,31 @@ public class ImplementStrStr {
         return dfa;
     }
 
+    public int strStr(String haystack, String needle) {
+        int lenHay = haystack.length(), lenNeed = needle.length();
+        if (lenNeed > lenHay) {
+            return -1;
+        }
+        if (lenNeed == 0) {
+            return 0;
+        }
+        int i = 0, j = 0;
+        int[] next = this.next(needle);
+        while (i < lenHay && j < lenNeed) {
+            if (haystack.charAt(i) == needle.charAt(j)) {
+                i++; j++;
+            } else if (j == 0) {
+                i++;
+            } else {
+                j = next[j];
+            }
+        }
+        if (j == lenNeed) {
+            return i - lenNeed;
+        }
+        return -1;
+    }
+
     private int[] next(String needle) {
         int[] next = new int[needle.length()];
         next[0] = -1; // 首字母的next值始终为-1
@@ -72,11 +100,13 @@ public class ImplementStrStr {
 
     public static void main(String[] args) {
         ImplementStrStr str = new ImplementStrStr();
-        String haystack = "BCBAABACAABABACAA";
-        String needle = "ABABAC";
-        // String haystack = "BBC ABCDAB ABCDAB CDABDE";
+        // String haystack = "BCBAABACAABABACAA";
+        // String needle = "ABABAC";
+        // String haystack = "BBC ABCDAB ABCDABCDABDE";
         // String needle = "ABCDABD";
-        Assert.assertEquals(15, str.strStr(haystack, needle));
+        // Assert.assertEquals(15, str.strStr(haystack, needle));
+
+        System.out.println(Arrays.toString(str.next("ABCDABD")));
     }
 
 }
