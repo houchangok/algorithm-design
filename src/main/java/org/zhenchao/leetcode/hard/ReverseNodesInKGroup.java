@@ -12,9 +12,36 @@ import org.zhenchao.leetcode.util.ListNodeUtils;
 public class ReverseNodesInKGroup {
 
     public ListNode reverseKGroup(ListNode head, int k) {
-        ListNode newHead = new ListNode(-1), tmp = newHead;
+        ListNode newHead = head, p = head;
+        ListNode left = head, right = null;
+        int n = 1;
+        while (p != null) {
+            if(n % k == 0) {
+                right = head;
+                this.reverse(left, right);
+            }
+            head = head.next;
+            n++;
+        }
+        return newHead;
+    }
 
-        return newHead.next;
+    public ListNode reverse(ListNode left, ListNode right) {
+        if (left == null || left.next == null) {
+            return left;
+        }
+        ListNode p = left.next;
+        ListNode root = left;
+        while (p != right) {
+            //删除p结点
+            root.next = p.next;
+            // 将p结点插入到头结点后面
+            ListNode q = p;
+            p = p.next;
+            q.next = left;
+            left = q;
+        }
+        return left;
     }
 
     private ListNode reverse2(ListNode pre, ListNode next) {
@@ -29,22 +56,10 @@ public class ReverseNodesInKGroup {
         return last;
     }
 
-    private ListNode reverse(ListNode left, ListNode right) {
-        ListNode head = new ListNode(-1);
-        ListNode p = left;
-        while (p != right) {
-            p.next = head.next;
-            head.next = p;
-            p = left.next;
-            left = left.next;
-        }
-        return head.next;
-    }
-
     public static void main(String[] args) {
         ReverseNodesInKGroup rng = new ReverseNodesInKGroup();
         ListNode list = ListNodeUtils.build(1, 2, 3, 4, 5, 6, 7, 8);
-        ListNodeUtils.display(rng.reverse2(list, list.next.next));
+        ListNodeUtils.display(rng.reverse(list, list.next.next.next));
     }
 
 }
