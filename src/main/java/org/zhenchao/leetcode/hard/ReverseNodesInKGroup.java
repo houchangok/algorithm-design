@@ -11,55 +11,92 @@ import org.zhenchao.leetcode.util.ListNodeUtils;
  */
 public class ReverseNodesInKGroup {
 
-    public ListNode reverseKGroup(ListNode head, int k) {
-        ListNode newHead = head, p = head;
-        ListNode left = head, right = null;
-        int n = 1;
-        while (p != null) {
-            if(n % k == 0) {
-                right = head;
-                this.reverse(left, right);
+    public ListNode reverseKGroup2(ListNode head, int k) {
+        if (k == 1) return head;
+        ListNode left = head, right, next = head, tmp = null;
+        int n = 0;
+        while (next != null) {
+            next = next.next;
+            if ((++n) % k == 0) {
+                right = next;
+                // 逆置 [left, right]
+                ListNode t = this.reverse(left, right);
+                if (n == k) {
+                    head = next;
+                }
+                if (null != tmp) {
+                    tmp.next = t;
+                }
+                tmp = left;
+                left = left.next;
             }
-            head = head.next;
-            n++;
         }
-        return newHead;
+        return head;
     }
 
+    /**
+     * 逆序链表的指定区间[left, right]
+     *
+     * @param left
+     * @param right
+     * @return
+     */
     public ListNode reverse(ListNode left, ListNode right) {
-        if (left == null || left.next == null) {
-            return left;
-        }
-        ListNode p = left.next;
-        ListNode root = left;
+        ListNode p = left;
+        ListNode q = left.next;
         while (p != right) {
-            //删除p结点
-            root.next = p.next;
-            // 将p结点插入到头结点后面
-            ListNode q = p;
-            p = p.next;
-            q.next = left;
-            left = q;
+            p.next = right.next;
+            right.next = p;
+            p = q;
+            q = q.next;
         }
-        return left;
+        return right;
     }
 
-    private ListNode reverse2(ListNode pre, ListNode next) {
-        ListNode last = pre.next; //where first will be doomed "last"
-        ListNode cur = last.next;
-        while (cur != next) {
-            last.next = cur.next;
-            cur.next = pre.next;
-            pre.next = cur;
-            cur = last.next;
+    public ListNode reverseKGroup(ListNode head, int k) {
+        if (k <= 1) return head;
+        ListNode cur = head, start, pre = null, next;
+        int n = 0;
+        while (cur != null) {
+            next = cur.next;
+            if ((++n) % k == 0) {
+                start = null == pre ? head : pre.next;
+                head = null == pre ? cur : head;
+                this.reverse(pre, next, start, cur);
+                pre = start;
+            }
+            cur = next;
         }
-        return last;
+        return head;
+    }
+
+    private void reverse(ListNode left, ListNode right, ListNode start, ListNode end) {
+        ListNode pre = start, cur = start.next;
+        ListNode next;
+        while (cur != right) {
+            next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+
+        if (null != left) left.next = end;
+
+        start.next = right;
     }
 
     public static void main(String[] args) {
         ReverseNodesInKGroup rng = new ReverseNodesInKGroup();
         ListNode list = ListNodeUtils.build(1, 2, 3, 4, 5, 6, 7, 8);
-        ListNodeUtils.display(rng.reverse(list, list.next.next.next));
+        /*ListNode left = list, right = list.next.next.next;
+        ListNode start = rng.reverse(left, right);
+        ListNodeUtils.display(start);
+        ListNode tmp = left;
+        left = left.next;
+        right = left.next.next.next;
+        tmp.next = rng.reverse(left, right);
+        ListNodeUtils.display(start);*/
+        ListNodeUtils.display(rng.reverseKGroup(list, 3));
     }
 
 }
