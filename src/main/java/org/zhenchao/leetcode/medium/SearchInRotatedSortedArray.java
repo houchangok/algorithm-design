@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class SearchInRotatedSortedArray {
 
     /**
-     * (l, m, r) 分别表示左、中、右
+     * (left, middle, right) 分别表示左、中、右
      *
      * @param nums
      * @param target
@@ -20,6 +20,7 @@ public class SearchInRotatedSortedArray {
     public int search(int[] nums, int target) {
         if (nums.length == 0) return -1;
         int result = this.search(nums, 0, nums.length - 1, target);
+        // 统一处理Arrays.binarySearch在查找不到时的返回结果
         return result < 0 ? -1 : result;
     }
 
