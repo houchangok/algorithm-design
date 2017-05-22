@@ -1,7 +1,5 @@
 package org.zhenchao.leetcode.hard;
 
-import java.util.Arrays;
-
 /**
  * @author zhenchao.wang 2017-05-22 17:41
  * @version 1.0.0
@@ -20,24 +18,25 @@ public class JumpGameII {
         if (dis[nums.length - 1] != nums.length - 1) {
             return 0;
         }
-        System.out.println(Arrays.toString(dis));
-        int count = 1;
-        for (int i = 0; i < dis.length - 1; i++) {
-            if (dis[i] != dis[i + 1]) {
-                count++;
-            }
+        // System.out.println(Arrays.toString(dis));
+        int count = 0;
+        int i = 0;
+        for (; i < dis.length - 1 && dis[i] != dis.length - 1; ) {
+            i = dis[i];
+            count++;
         }
-        if (dis[dis.length - 1] != dis[dis.length - 2]) count++;
+        if (i < dis.length) count++;
         return count;
     }
 
     public static void main(String[] args) {
         JumpGameII jg = new JumpGameII();
-        // int[] nums = {2, 1, 1, 3, 4};
+        int[] nums = {2, 1, 1, 3, 4};
         // int[] nums = {3, 2, 1, 0, 4};
         // int[] nums = {2, 1, 1, 3, 4};
-        int[] nums = {2, 0, 0};
+        // int[] nums = {2, 0, 0};
         // int[] nums = {1};
+        // int[] nums = {7, 0, 9, 6, 9, 6, 1, 7, 9, 0, 1, 2, 9, 0, 3};
 
         System.out.println(jg.jump(nums));
     }
