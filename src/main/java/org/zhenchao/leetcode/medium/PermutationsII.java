@@ -15,8 +15,8 @@ public class PermutationsII {
     private List<List<Integer>> result = new ArrayList<List<Integer>>();
 
     public List<List<Integer>> permuteUnique(int[] nums) {
+        Arrays.sort(nums);  // 排序
         int[] visited = new int[nums.length];
-        Arrays.sort(nums);
         this.recursion(nums, visited, new ArrayList<Integer>());
         return result;
     }
@@ -24,11 +24,10 @@ public class PermutationsII {
     private void recursion(int[] nums, int[] visited, List<Integer> list) {
         if (list.size() == nums.length) {
             result.add(new ArrayList<Integer>(list));
-            // Arrays.fill(visited, 0);
             return;
         }
         for (int i = 0; i < nums.length; i++) {
-            if (i > 0 && nums[i] == nums[i - 1]) continue; // 去重
+            if (i > 0 && nums[i - 1] == nums[i] && visited[i - 1] == 0) continue; // 去重
             if (visited[i] == 0) {
                 list.add(nums[i]);
                 visited[i] = 1;
@@ -41,9 +40,9 @@ public class PermutationsII {
     }
 
     public static void main(String[] args) {
-        Permutations p = new Permutations();
+        PermutationsII p = new PermutationsII();
         int[] nums = {1, 1, 2};
-        List<List<Integer>> result = p.permute(nums);
+        List<List<Integer>> result = p.permuteUnique(nums);
         for (final List<Integer> list : result) {
             System.out.println(list);
         }
