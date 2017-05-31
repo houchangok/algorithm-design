@@ -1,10 +1,10 @@
 package org.zhenchao.leetcode.easy;
 
 /**
- * Given a string s consists of upper/lower-case alphabets and empty space characters ' ', return the length of last word in the string.
- * If the last word does not exist, return 0.
+ * No.58 Length of Last Word
  *
- * @author Apache_xiaochao 2015-10-2 12:13:30
+ * @author zhenchao.wang 2017-5-31 20:49:19
+ * @version 1.0.0
  */
 public class LengthOfLastWord {
 
@@ -34,11 +34,9 @@ public class LengthOfLastWord {
      * 从后往前遍历计数
      *
      * @param s
-     *
      * @return
      */
     public int lengthOfLastWord(String s) {
-
         int len = 0;
         if (s == null) {
             return len;
@@ -52,7 +50,6 @@ public class LengthOfLastWord {
         }
 
         return len;
-
     }
 
 }
