@@ -14,6 +14,15 @@ public class SearchA2DMatrix {
         return this.binarySearch(matrix, 0, length, target);
     }
 
+    /**
+     * 递归二分查找
+     *
+     * @param matrix
+     * @param left
+     * @param right
+     * @param target
+     * @return
+     */
     public boolean binarySearch(int[][] matrix, int left, int right, int target) {
         if (left > right) return false;
 
