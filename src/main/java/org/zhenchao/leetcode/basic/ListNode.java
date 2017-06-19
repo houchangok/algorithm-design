@@ -15,4 +15,8 @@ public class ListNode {
         this.val = val;
     }
 
+    @Override
+    public String toString() {
+        return "val=" + val + ", next=" + (null == next ? null : next.val);
+    }
 }
