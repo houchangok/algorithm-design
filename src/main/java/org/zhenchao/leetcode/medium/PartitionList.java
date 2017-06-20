@@ -12,7 +12,7 @@ import org.zhenchao.leetcode.util.ListNodeUtils;
 public class PartitionList {
 
     public ListNode partition(ListNode head, int x) {
-        ListNode g = head, op = new ListNode(-1);
+        ListNode g = head, op = new ListNode(-1), nh = op;
         while (null != g && g.val < x) {
             op = g;
             g = g.next;
@@ -33,13 +33,13 @@ public class PartitionList {
                 idx = idx.next;
             }
         }
-        return head;
+        return null == nh.next ? head : nh.next;
     }
 
     public static void main(String[] args) {
         PartitionList pl = new PartitionList();
-        ListNode head = ListNodeUtils.build(1, 4, 3, 2, 5, 2);
-        ListNodeUtils.display(pl.partition(head, 3));
+        ListNode head = ListNodeUtils.build(1);
+        ListNodeUtils.display(pl.partition(head, 2));
     }
 
 }
