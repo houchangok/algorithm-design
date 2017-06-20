@@ -1,10 +1,9 @@
 package org.zhenchao.leetcode.easy;
 
 /**
- * Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
- * 要求不允许使用额外的数组 *
+ * No.88 Merge Sorted Array
  *
- * @author Apache_xiaochao 2015-10-2 12:40:11
+ * @author zhenchao.wang 2017-6-20 22:02:03
  */
 public class MergeSortedArray {
 
