@@ -36,26 +36,26 @@ public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
     ListNode head = result;
     int carry = 0;
     while (null != l1 && null != l2) {
-        int value = l1.val + l2.val + carry;
-        result.next = new ListNode(value % 10);
-        carry = value / 10;
+        int val = l1.val + l2.val + carry;
+        result.next = new ListNode(val % 10);
+        carry = val / 10;
         result = result.next;
         l1 = l1.next;
         l2 = l2.next;
     }
 
     while (null != l1) {
-        int value = l1.val + carry;
-        result.next = new ListNode(value % 10);
-        carry = value / 10;
+        int val = l1.val + carry;
+        result.next = new ListNode(val % 10);
+        carry = val / 10;
         result = result.next;
         l1 = l1.next;
     }
 
     while (null != l2) {
-        int value = l2.val + carry;
-        result.next = new ListNode(value % 10);
-        carry = value / 10;
+        int val = l2.val + carry;
+        result.next = new ListNode(val % 10);
+        carry = val / 10;
         result = result.next;
         l2 = l2.next;
     }

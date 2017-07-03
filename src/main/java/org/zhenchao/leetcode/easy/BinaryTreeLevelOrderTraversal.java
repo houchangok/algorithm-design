@@ -37,11 +37,11 @@ public class BinaryTreeLevelOrderTraversal {
 
             if (lv > llist.size() - 1) {
                 list = new ArrayList<Integer>();
-                list.add(node.value);
+                list.add(node.val);
                 llist.add(list);
             } else {
                 list = llist.get(lv);
-                list.add(node.value);
+                list.add(node.val);
                 llist.set(lv, list);
             }
 

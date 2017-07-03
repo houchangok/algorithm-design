@@ -15,17 +15,17 @@ public class PathSumII {
             return;
         }
         if (node.left == null && node.right == null) {
-            if (val + node.value == sum) {
+            if (val + node.val == sum) {
                 this.llist.add(new ArrayList<Integer>(list));
             }
         }
         if (node.left != null) {
-            list.add(node.left.value);
-            this.findPath(node, sum, val + node.left.value, list);
+            list.add(node.left.val);
+            this.findPath(node, sum, val + node.left.val, list);
         }
         if (node.right != null) {
-            list.add(node.right.value);
-            this.findPath(node, sum, val + node.right.value, list);
+            list.add(node.right.val);
+            this.findPath(node, sum, val + node.right.val, list);
         }
     }
 

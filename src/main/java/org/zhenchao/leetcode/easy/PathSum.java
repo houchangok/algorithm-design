@@ -17,7 +17,7 @@ public class PathSum {
         if (root == null) {
             return false;
         }
-        val += root.value;
+        val += root.val;
         if (root.left == null && root.right == null) {
             if (val == sum) {
                 return true;
@@ -56,7 +56,7 @@ public class PathSum {
         Stack<TreeNode> nodes = new Stack<TreeNode>();
         Stack<Integer> sums = new Stack<Integer>();
         nodes.push(root);
-        sums.push(root.value);
+        sums.push(root.val);
         while (!nodes.isEmpty()) {
             TreeNode node = nodes.pop();
             Integer currSum = sums.pop();
@@ -68,12 +68,12 @@ public class PathSum {
 
             if (node.right != null) {
                 nodes.push(node.right);
-                sums.push(currSum + node.right.value);
+                sums.push(currSum + node.right.val);
             }
 
             if (node.left != null) {
                 nodes.push(node.left);
-                sums.push(currSum + node.left.value);
+                sums.push(currSum + node.left.val);
             }
 
         }

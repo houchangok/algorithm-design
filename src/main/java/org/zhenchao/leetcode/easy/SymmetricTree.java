@@ -25,7 +25,7 @@ public class SymmetricTree {
             return false;
         }
 
-        return left.value == right.value
+        return left.val == right.val
                 && this.check(left.left, right.right)
                 && this.check(left.right, right.left);
 
