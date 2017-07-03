@@ -43,10 +43,10 @@ private List<List<Integer>> twoSum(int[] nums, int start, int target) {
     List<List<Integer>> list = new ArrayList<List<Integer>>();
     int left = start, right = nums.length - 1;
     while (left < right) {
-        int value = nums[left] + nums[right];
-        if (value < target) {
+        int val = nums[left] + nums[right];
+        if (val < target) {
             left++;
-        } else if (value > target) {
+        } else if (val > target) {
             right--;
         } else {
             list.add(Arrays.asList(-target, nums[left], nums[right]));

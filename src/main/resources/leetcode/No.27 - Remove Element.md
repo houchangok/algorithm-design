@@ -1,6 +1,6 @@
 ### 题目
 
-Given an array and a value, remove all instances of that value in place and return the new length.
+Given an array and a val, remove all instances of that val in place and return the new length.
 
 Do not allocate extra space for another array, you must do this __in place__ with constant memory.
 
