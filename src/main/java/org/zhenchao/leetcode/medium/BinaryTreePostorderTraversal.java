@@ -2,7 +2,9 @@ package org.zhenchao.leetcode.medium;
 
 import org.zhenchao.leetcode.basic.TreeNode;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * 145. Binary Tree Postorder Traversal
@@ -13,8 +15,43 @@ import java.util.List;
 public class BinaryTreePostorderTraversal {
 
     public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        if (null != root) stack.add(root);
+        TreeNode pre = null;
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.peek();
+            if ((null == node.left && null == node.right)
+                    || (null != pre && (pre == node.right || pre == node.left))) {
+                stack.pop();
+                result.add(node.val);
+                pre = node;
+            } else {
+                // 需要先右再左
+                if (null != node.right) stack.add(node.right);
+                if (null != node.left) stack.add(node.left);
+            }
+        }
+        return result;
+    }
 
-        return null;
+    /**
+     * 后序遍历（基于递归）
+     *
+     * @param root
+     * @return
+     */
+    public List<Integer> postorderTraversal2(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        this.recursion(root, result);
+        return result;
+    }
+
+    private void recursion(TreeNode node, List<Integer> list) {
+        if (null == node) return;
+        if (null != node.left) this.recursion(node.left, list);
+        if (null != node.right) this.recursion(node.right, list);
+        list.add(node.val);
     }
 
 }
