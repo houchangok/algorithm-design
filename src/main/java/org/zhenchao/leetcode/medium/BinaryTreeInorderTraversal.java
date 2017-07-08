@@ -24,13 +24,16 @@ public class BinaryTreeInorderTraversal {
         List<Integer> result = new ArrayList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
         while (null != root || !stack.isEmpty()) {
+            // 循环将左孩子节点入栈
             while (root != null) {
                 stack.add(root);
                 root = root.left;
             }
             if (!stack.isEmpty()) {
+                // 出栈访问该节点
                 TreeNode node = stack.pop();
                 result.add(node.val);
+                // 令 root = node.right
                 root = node.right;
             }
         }

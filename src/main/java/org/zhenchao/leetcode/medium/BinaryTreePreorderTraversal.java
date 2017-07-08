@@ -14,15 +14,21 @@ import java.util.Stack;
  */
 public class BinaryTreePreorderTraversal {
 
+    /**
+     * 非递归（基于栈）
+     *
+     * @param root
+     * @return
+     */
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
-        if (null != root) stack.add(root);
+        if (null != root) stack.add(root);  // 根节点入栈
         while (!stack.isEmpty()) {
             TreeNode node = stack.pop();
             result.add(node.val);
-            if (null != node.right) stack.add(node.right);
-            if (null != node.left) stack.add(node.left);
+            if (null != node.right) stack.add(node.right); // 先右孩子节点入栈
+            if (null != node.left) stack.add(node.left); // 再左孩子节点入栈
         }
         return result;
     }

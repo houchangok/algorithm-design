@@ -14,13 +14,23 @@ import java.util.Stack;
  */
 public class BinaryTreePostorderTraversal {
 
+    /**
+     * 后序遍历（基于栈）
+     *
+     * @param root
+     * @return
+     */
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
-        if (null != root) stack.add(root);
+        if (null != root) stack.add(root); // 现将根节点入栈
         TreeNode pre = null;
         while (!stack.isEmpty()) {
             TreeNode node = stack.peek();
+            /*
+             * 1. 当前节点没有孩子节点
+             * 2. 当前节点的孩子节点是上次访问的节点
+             */
             if ((null == node.left && null == node.right)
                     || (null != pre && (pre == node.right || pre == node.left))) {
                 stack.pop();
