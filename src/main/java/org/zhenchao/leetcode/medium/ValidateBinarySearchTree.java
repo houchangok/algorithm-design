@@ -2,6 +2,8 @@ package org.zhenchao.leetcode.medium;
 
 import org.zhenchao.leetcode.basic.TreeNode;
 
+import java.util.Stack;
+
 /**
  * 98. Validate Binary Search Tree
  *
@@ -11,25 +13,34 @@ import org.zhenchao.leetcode.basic.TreeNode;
 public class ValidateBinarySearchTree {
 
     /**
-     * 采用中序遍历
+     * 采用非递归中序遍历
      *
      * @param root
      * @return
      */
     public boolean isValidBST(TreeNode root) {
-        if (null == root) return false;
-        return this.inorderTraversal(root, null);
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode pre = null;
+        while (null != root || !stack.isEmpty()) {
+            while (null != root) {
+                stack.add(root);
+                root = root.left;
+            }
+            if (!stack.isEmpty()) {
+                TreeNode node = stack.pop();
+                if (null != pre && pre.val >= node.val) return false;
+                pre = node;
+                root = node.right;
+            }
+        }
+        return true;
     }
 
-    private boolean inorderTraversal(TreeNode node, TreeNode pre) {
-        if (null != node.left) return this.inorderTraversal(node.left, pre);
-        if (null != pre && pre.val > node.val) {
-            return false;
-        } else {
-            pre = node;
-        }
-        if (null != node.right) return this.inorderTraversal(node.right, pre);
-        return true;
+    public static void main(String[] args) {
+        ValidateBinarySearchTree vbst = new ValidateBinarySearchTree();
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(1);
+        System.out.println(vbst.isValidBST(root));
     }
 
 }
