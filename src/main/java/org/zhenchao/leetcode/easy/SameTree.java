@@ -1,11 +1,16 @@
 package org.zhenchao.leetcode.easy;
 
-
 import org.zhenchao.leetcode.basic.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * 100. Same Tree
+ *
+ * @author zhenchao.wang 2017-7-16 16:02:32
+ * @version 1.0.0
+ */
 public class SameTree {
 
     /**
@@ -13,7 +18,6 @@ public class SameTree {
      *
      * @param p
      * @param q
-     *
      * @return
      */
     public boolean isSameTree(TreeNode p, TreeNode q) {
@@ -35,11 +39,9 @@ public class SameTree {
      *
      * @param p
      * @param q
-     *
      * @return
      */
     public boolean isSameTreeNonRecursive(TreeNode p, TreeNode q) {
-
         Queue<TreeNode> pQueue = new LinkedList<TreeNode>();
         Queue<TreeNode> qQueue = new LinkedList<TreeNode>();
         pQueue.add(p);
