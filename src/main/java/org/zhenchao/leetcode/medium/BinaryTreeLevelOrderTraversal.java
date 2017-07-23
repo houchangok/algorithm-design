@@ -49,7 +49,7 @@ public class BinaryTreeLevelOrderTraversal {
     }
 
     public static void main(String[] args) {
-        BinaryTreeLevelOrderTraversal btlot = new BinaryTreeLevelOrderTraversal();
+        BinaryTreeLevelOrderTraversal levelOrderTraversal = new BinaryTreeLevelOrderTraversal();
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
@@ -57,7 +57,7 @@ public class BinaryTreeLevelOrderTraversal {
         //root.left.left.left = new TreeNode(4);
         //root.left.left.left.left = new TreeNode(5);
         root.left.right = new TreeNode(5);
-        List<List<Integer>> list = btlot.levelOrder(root);
+        List<List<Integer>> list = levelOrderTraversal.levelOrder(root);
         for (final List<Integer> l : list) {
             System.out.println(l);
         }
