@@ -1,26 +1,32 @@
 package org.zhenchao.leetcode.easy;
 
-
 import org.zhenchao.leetcode.basic.TreeNode;
 
 /**
- * Given a binary tree, find its minimum depth.
- * The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+ * 111. Minimum Depth of Binary Tree
  *
- * @author Apache_xiaochao 2015-10-2 16:28:52
+ * @author zhenchao.wang 2017-7-29 10:45:16
+ * @version 1.0.0
  */
 public class MinimumDepthOfBinaryTree {
 
+    /**
+     * 这道题并不是简单利用 Math.min 那么简单
+     * 最小深度是指到一棵叶子节点（无孩子节点），如果简单使用 min 会将只有左孩子节点或右孩子节点的结点也考虑进去
+     *
+     * @param root
+     * @return
+     */
     public int minDepth(TreeNode root) {
         if (root == null) {
             return 0;
         }
-        if (root.left == null && root.right == null) {
-            return 1;
+        int left = this.minDepth(root.left);
+        int right = this.minDepth(root.right);
+        if (left == 0 || right == 0) {
+            return left > right ? left + 1 : right + 1;
         }
-        int leftDepth = root.left != null ? this.minDepth(root.left) : Integer.MAX_VALUE;
-        int rightDepth = root.right != null ? this.minDepth(root.right) : Integer.MAX_VALUE;
-        return Math.min(leftDepth, rightDepth) + 1;
+        return Math.min(left, right) + 1;
     }
 
 }
