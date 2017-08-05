@@ -1,55 +1,40 @@
 package org.zhenchao.leetcode.easy;
 
 /**
- * Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+ * 125. Valid Palindrome
  *
- * @author Apache_xiaochao 2015-10-3 13:52:43
+ * @author zhenchao.wang 2015-10-3 13:52:43
+ * @version 1.0.0
  */
 public class ValidPalindrome {
-    public static void main(String[] args) {
-        ValidPalindrome vp = new ValidPalindrome();
-        System.out.println(vp.isPalindrome("ab2a"));
-        ;
-    }
 
     public boolean isPalindrome(String s) {
-
-        if (s == null) {
-            return false;
-        }
-
-        int i = 0;
-        int j = s.length() - 1;
-        while (i <= j) {
+        if (null == s) return false;
+        int i = 0, j = s.length() - 1;
+        s = s.toLowerCase();
+        while (i < j) {
             char left = s.charAt(i);
-            if ((left >= 'a' && left <= 'z')
-                    || (left >= 'A' && left <= 'Z')
-                    || (left >= '0' && left <= '9')) {
-
-            } else {
+            if (!this.isAlphanumeric(left)) {
                 ++i;
                 continue;
             }
             char right = s.charAt(j);
-            if ((right >= 'a' && right <= 'z')
-                    || (right >= 'A' && right <= 'Z')
-                    || (right >= '0' && right <= '9')) {
-
-            } else {
+            if (!this.isAlphanumeric(right)) {
                 --j;
                 continue;
             }
-
-            int diff = Math.abs(left - right);
-            if (diff == 0 || diff == 32) {
-                ++i;
-                --j;
-            } else {
-                return false;
-            }
-
+            if (left != right) return false;
+            ++i; --j;
         }
         return true;
+    }
 
+    private boolean isAlphanumeric(char c) {
+        return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9');
+    }
+
+    public static void main(String[] args) {
+        ValidPalindrome vp = new ValidPalindrome();
+        System.out.println(vp.isPalindrome("ab2a"));
     }
 }
