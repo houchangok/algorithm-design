@@ -1,57 +1,59 @@
 package org.zhenchao.leetcode.easy;
 
-
 import org.zhenchao.leetcode.basic.ListNode;
 
 /**
- * Write a program to find the node at which the intersection of two singly linked lists begins.
+ * 160. Intersection of Two Linked Lists
  *
- * @author Apache_xiaochao 2015-10-3 14:23:40
+ * @author zhenchao.wang 2015-10-3 14:23:40
+ * @version 1.0.0
  */
 public class IntersectionOfTwoLinkedLists {
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-
         if (headA == null || headB == null) {
             return null;
         }
 
-        ListNode a = headA;
-        ListNode b = headB;
-        int lenA = 0;
-        int lenB = 0;
-        while (a.next != null) {
-            lenA++;
-            a = a.next;
+        ListNode ha = headA, hb = headB;
+        int la = 0, lb = 0;
+        // 计算链表 A 的长度
+        while (ha.next != null) {
+            la++;
+            ha = ha.next;
         }
-        while (b.next != null) {
-            lenB++;
-            b = b.next;
+        // 计算链表 B 的长度
+        while (hb.next != null) {
+            lb++;
+            hb = hb.next;
         }
-        if (a != b) {
+        // 如果最后一个结点都不相同，那么肯定不存在交叉
+        if (ha != hb) {
             return null;
         }
-        a = headA;
-        b = headB;
-        if (lenA > lenB) {
+
+        // 找到同一起点
+        ha = headA; hb = headB;
+        if (la > lb) {
             int i = 0;
-            while (i < (lenA - lenB)) {
-                a = a.next;
+            while (i < (la - lb)) {
+                ha = ha.next;
                 i++;
             }
-        } else if (lenA < lenB) {
+        } else if (la < lb) {
             int i = 0;
-            while (i < (lenB - lenA)) {
-                b = b.next;
+            while (i < (lb - la)) {
+                hb = hb.next;
                 i++;
             }
         }
-        while (a != null) {
-            if (a == b) {
-                return a;
+        // 遍历寻找交叉点
+        while (ha != null) {
+            if (ha == hb) {
+                return ha;
             } else {
-                a = a.next;
-                b = b.next;
+                ha = ha.next;
+                hb = hb.next;
             }
         }
         return null;
