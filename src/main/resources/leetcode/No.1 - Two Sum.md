@@ -5,6 +5,7 @@ Given an array of integers, return indices of the two numbers such that they add
 You may assume that each input would have exactly one solution.
 
 Example:
+
 ```text
 Given nums = [2, 7, 11, 15], target = 9,
 
@@ -22,22 +23,7 @@ return [0, 1].
 
 - 思路二
 
-先将数组按从小到大排序，然后用两个指针，一个首指针和一个尾指针，然后从两边向中间遍历：
-
-```java
-// 伪代码
-while(left < right) {
-    if(sum == target) {
-        return;
-    } else if(sum < target) {
-        left++;
-    } else {
-        right--;
-    }
-}
-```
-
-因为排序后需要记录原先对应的下标，所以空间复杂度为O(n)，时间复杂度MAX(O(n), O(排序))。
+先将数组按从小到大排序，然后用两个指针，一个首指针和一个尾指针，然后从两边向中间遍历。因为排序后需要记录原先对应的下标，所以空间复杂度为O(n)，时间复杂度MAX(O(n), O(排序))。
 
 ### 实现
 
