@@ -61,14 +61,10 @@ public class AddTwoNumbers {
     }
 
     public static void main(String[] args) {
-
         AddTwoNumbers atn = new AddTwoNumbers();
-
         ListNode l1 = ListNodeUtils.build(9, 9, 9, 9, 9);
         ListNode l2 = ListNodeUtils.build(9, 9, 9, 9);
-
         ListNodeUtils.display(atn.addTwoNumbers(l1, l2));
-
     }
 
 }

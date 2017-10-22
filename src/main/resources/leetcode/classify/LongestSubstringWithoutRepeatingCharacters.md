@@ -1,4 +1,6 @@
-### 题目
+### Longest Substring Without Repeating Characters
+
+> No.3, medium
 
 Given a string, find the length of the longest substring without repeating characters.
 
@@ -10,15 +12,15 @@ Given `"bbbbb"`, the answer is `"b"`, with the length of 1.
 
 Given `"pwwkew"`, the answer is `"wke"`, with the length of 3.
 
-Note that the answer must be a substring, `"pwke"` is a _subsequence_ and not a substring.
+Note that the answer must be a substring, `"pwke"` is a subsequence and not a substring.
 
-### 分析
+#### 分析
 
-题目的意思简单的说就是 __求最大子串（非子序列）的长度__。对于该题，如果用一个集合去存储已经访问过的字符串，需要考虑许多边界问题，不建议这样做。
+题目的意思简单的说就是 __求最长子字符串（非子序列）的长度__，对于该题，如果用一个集合去存储已经访问过的字符串，需要考虑许多边界问题，不建议这样做。
 
-我们可以借鉴 KMP 算法的思路，考虑一个基本原则，__如果一个字符串具有重复字符，那么包含它的父串也必然包含重复字符__，所以我们可以从左边开始扫描，当遇到一个重复字符时，就回退到该字符上次出现位置 `+1` 处开始新的扫描。
+我们可以借鉴KMP算法的思路，考虑一个基本原则，__如果一个字符串具有重复字符，那么包含它的父串也必然包含重复字符__，所以我们可以从左边开始扫描，当遇到一个重复字符时，就回退到该字符上次出现位置 `+1` 处开始新的扫描。
 
-### 实现
+#### 实现
 
 ```java
 /**
