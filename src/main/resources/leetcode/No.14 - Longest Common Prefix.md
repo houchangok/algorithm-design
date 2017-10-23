@@ -1,8 +1,10 @@
-### 题目
+### Longest Common Prefix
+
+> No.14, easy
 
 Write a function to find the longest common prefix string amongst an array of strings.
 
-### 分析
+#### 分析
 
 题目意在给定一个字符串数组，然后寻找这些字符串的最长公共前缀。
 
@@ -14,7 +16,7 @@ Write a function to find the longest common prefix string amongst an array of st
 
 横向扫描即将每一个字符串与当前最长公共前缀进行比较，然后更新当前最长公共前缀，直到所有的字符串都与之比较了一遍，则算法结束。
 
-### 实现
+#### 实现
 
 - 思路一
 

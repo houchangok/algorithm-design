@@ -44,8 +44,3 @@ public int maxArea(int[] height) {
     return max;
 }
 ```
-
-### Trapping Rain Water
-
-> No.42, hard
-

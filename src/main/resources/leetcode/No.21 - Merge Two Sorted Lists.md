@@ -1,12 +1,14 @@
-### 题目
+### Merge Two Sorted Lists
+
+> No.21, easy
 
 Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
 
-### 分析
+#### 分析
 
 题目要求将两个已经有序的链表合并成为一个有序的链表，并且只能在原地实现，两种思路，一是将一个链表中的元素逐个插入到另外一个链表合适的位置，另外一个就是在两个链表之间连线，修改next指针，是最后连成的链表是一个由两个链表元素组成的、有序递增的链表。
 
-### 实现
+#### 实现
 
 下面的实现采用的是“穿线法”：
 
