@@ -5,18 +5,28 @@ import java.util.Arrays;
 /**
  * No.28 Implement strStr()
  *
+ * 判断needle是不是haystack的子串，是的话就返回index，否则就返回-1
+ *
  * @author zhenchao.wang 2017-04-30 17:46
  * @version 1.0.0
  */
 public class ImplementStrStr {
 
-    /**
-     * 判断needle是不是haystack的子串，是的话就返回index，否则就返回-1
-     *
-     * @param haystack
-     * @param needle
-     * @return
-     */
+    public int strStr(String haystack, String needle) {
+        if (null == haystack || null == needle || needle.length() == 0) return 0;
+        int hl = haystack.length(), nl = needle.length();
+        if (nl > hl) return -1;
+        // 暴力枚举
+        for (int i = 0; i <= hl - nl; i++) {
+            int j;
+            for (j = 0; j < nl; j++) {
+                if (haystack.charAt(i + j) != needle.charAt(j)) break;
+            }
+            if (j == nl) return i;
+        }
+        return -1;
+    }
+
     public int strStrWithDfa(String haystack, String needle) {
         int lenHay = haystack.length(), lenNeedle = needle.length();
         if (lenNeedle > lenHay) {
@@ -58,7 +68,7 @@ public class ImplementStrStr {
         return dfa;
     }
 
-    public int strStr(String haystack, String needle) {
+    public int strStrWithNext(String haystack, String needle) {
         int lenHay = haystack.length(), lenNeed = needle.length();
         if (lenNeed > lenHay) {
             return -1;
@@ -105,8 +115,8 @@ public class ImplementStrStr {
         // String haystack = "BBC ABCDAB ABCDABCDABDE";
         // String needle = "ABCDABD";
         // Assert.assertEquals(15, str.strStr(haystack, needle));
-
-        System.out.println(Arrays.toString(str.next("ABCDABD")));
+        System.out.println(str.strStr("a", "a"));
+        // System.out.println(Arrays.toString(str.next("ABCDABD")));
     }
 
 }
