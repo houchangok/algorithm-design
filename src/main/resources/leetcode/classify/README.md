@@ -43,14 +43,37 @@
 41 | First Missing Positive | hard | 数组&链表 |
 42 | Trapping Rain Water | hard | 数组&链表 |
 43 | Multiply Strings | medium | 数学问题 | 
+44 | | | |
+45 | Jump Game II | hard | 贪心策略 | 
 46 | Permutations | medium | 数组&链表 |
-47 | Permutations | medium | 数组&链表 |
+47 | Permutations II | medium | 数组&链表 |
+48 | | | |
+49 | | | |
+50 | | | |
+51 | N-Queens | hard | | TODO
+52 | N-Queens II | hard | | TODO
+53 | Maximum Subarray | easy | 数组&链表 | |
+54 | Spiral Matrix | medium | | TODO
+55 | Jump Game | medium | 贪心策略 |
+56 | Merge Intervals | medium | 数组&链表 |
+57 | Insert Interval | hard | | TODO
+58 | Length of Last Word | easy | 字符串 | 
+59 | Spiral Matrix II | medium | | TODO
+60 | | | |
+61 | Rotate List | medium | 数组&链表 | 
+62 | Unique Paths | medium | 动态规划 |
+63 | Unique Paths II | medium | 动态规划 |
+64 | Minimum Path Sum | medium | 动态规划 |
+65 | | | |
+| | | | |
 81 | Search in Rotated Sorted Array II | medium | 二分查找 |
 88 | Merge Sorted Array | easy | 数组&链表 |
+151 | Reverse Words in a String | medium | 字符串 |
 153 | Find Minimum in Rotated Sorted Array | medium | 二分查找 |
 154 | Find Minimum in Rotated Sorted Array II | hard | 二分查找 |
 167 | Two Sum II - Input array is sorted | easy | K Sum | 
 170 | Two Sum III - Data structure design | easy | K Sum | 未解锁
+189 | Rotate Array | easy | 数组&链表 | 
 234 | Palindrome Linked List | easy | 数组&链表 |
 407 | Trapping Rain Water II | hard | 数组&链表 | TODO
 445 | Add Two Numbers II | medium | 数学问题 | 
