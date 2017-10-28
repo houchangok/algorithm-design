@@ -11,7 +11,7 @@ import org.zhenchao.leetcode.basic.TreeNode;
 public class BalancedBinaryTree {
 
     /**
-     * 后续遍历
+     * 后序遍历
      *
      * @param root
      * @return
