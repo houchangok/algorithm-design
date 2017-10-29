@@ -14,7 +14,6 @@ The brackets must close in the correct order, `"()"` and `"()[]{}"` are all vali
 
 ```java
 public boolean isValid(String s) {
-
     if (null == s || "".equals(s) || s.length() == 1) {
         return false;
     }

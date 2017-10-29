@@ -1,6 +1,6 @@
-> No.167, easy
+### Two Sum II - Input array is sorted
 
-### 题目
+> No.167, easy
 
 Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.
 
@@ -11,11 +11,11 @@ You may assume that each input would have exactly one solution and you may not u
 > - Input: numbers={2, 7, 11, 15}, target=9
 > - Output: index1=1, index2=2
 
-### 分析
+#### 分析
 
-这道题是 Two Sum 的简化版，输入的数组已经是有序的，所以不需要再进行排序，直接用两个指针由两端向中间遍历即可。
+这道题是 I 的简化版，输入的数组已经是有序的，所以不需要再进行排序，直接用两个指针由两端向中间遍历即可，因为数组已经是有序的，所以数组的下标就是我们期望的返回值，不需要再另外定义数据结构。
 
-### 实现
+#### 实现
 
 ```java
 public int[] twoSum(int[] numbers, int target) {

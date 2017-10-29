@@ -1,4 +1,6 @@
-### 题目
+### Median of Two Sorted Arrays
+
+> No.4, hard
 
 There are two sorted arrays `nums1` and `nums2` of size m and n respectively.
 
@@ -6,7 +8,7 @@ Find the median of the two sorted arrays. The overall run time complexity should
 
 Example 1:
 
-```text
+```
 nums1 = [1, 3]
 nums2 = [2]
 
@@ -15,20 +17,20 @@ The median is 2.0
 
 Example 2:
 
-```text
+```
 nums1 = [1, 2]
 nums2 = [3, 4]
 
 The median is (2 + 3)/2 = 2.5
 ```
 
-### 分析
+#### 分析
 
-这道题目可以泛化为 __求两个有序数组中第 k 大的数__，如果没有实现复杂度限制，这种题目简单的做法就是用一个计数器 h，依次从左向右比较两个数组对应的值，较小的数组的指针前进一位，当 h == k 时就找到了第 k 大的数，这样的时间复杂度是 `O(m + n)`。
+这道题目可以泛化为 __求两个有序数组中第 k 大的数__，如果没有实现复杂度限制，最简单的做法就是用一个计数器 h，依次从左向右比较两个数组对应的值，较小的数组的指针前进一位，当 h == k 时就找到了第 k 大的数，这样的时间复杂度是 `O(m + n)`。
 
-本题是求中间值，即 k = (m + n) / 2，并且要求时间复杂度是 `O(log(m+n))`，所以上述思想不符合要求，不过看这样的时间复杂度要求，我们就应该想到是要用二分查找去做。这里需要考虑一个思路，__如果数组 A 和 B 满足，A[k / 2 - 1] < B [k / 2 -1]，那么第 k 大的数绝对不可能出现在 A[0, k / 2 - 1] 中__，所以整个时候我们就可以将 A[0, k / 2 - 1] 砍掉，然后继续在剩下的元素中查找，不过这个时候的 k 应该更新为 `k = k - k / 2 - 1`，因为刚刚已经砍掉了 k / 2 - 1 个元素。
+本题是求中间值，即 k = (m + n) / 2，并且要求时间复杂度是 `O(log(m+n))`，所以上述思想不符合要求，不过看这样的时间复杂度要求，我们就应该想到是要用二分查找去做。这里需要考虑一个思路，__如果数组 A 和 B 满足，A[k / 2 - 1] < B [k / 2 -1]，那么第 k 大的数绝对不可能出现在 A[0, k / 2 - 1] 中__，所以这时我们就可以将 A[0, k / 2 - 1] 砍掉，然后继续在剩下的元素中查找，不过这个时候的 k 应该更新为 `k = k - k / 2 - 1`，因为刚刚已经砍掉了 k / 2 - 1 个元素。
 
-### 实现
+#### 实现
 
 ```java
 /**
@@ -59,15 +61,6 @@ public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
 /**
  * 采用二分思想，求两个数组中第k大的数
- *
- * @param a
- * @param aStart
- * @param aEnd
- * @param b
- * @param bStart
- * @param bEnd
- * @param k
- * @return
  */
 private double findKth(int[] a, int aStart, int aEnd, int[] b, int bStart, int bEnd, int k) {
     int m = aEnd - aStart + 1, n = bEnd - bStart + 1;

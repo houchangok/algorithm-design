@@ -6,7 +6,7 @@ Merge k sorted linked lists and return it as one sorted list. Analyze and descri
 
 #### 分析
 
-题目要求merge k 个有序链表，之前做过 __Merge Two Sorted Lists__ 的题目，这道题目本质上还是两两 merge，不过如果是逐个逐个的 merge 会超时，所以需要先利用递归的思想两两 merge，然后再总的 merge。
+题目要求合并 K 个有序链表，之前做过 __Merge Two Sorted Lists__ 的题目，这道题目本质上还是两两 merge，不过如果是逐个 merge 会超时，所以需要先利用递归的思想两两 merge，然后再总的 merge。
 
 #### 实现
 

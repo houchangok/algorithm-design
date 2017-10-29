@@ -1,13 +1,13 @@
-> No.653, easy
+### Two Sum IV - Input is a BST
 
-### 题目
+> No.653, easy
 
 Given a Binary Search Tree and a target number, return true if there exist two elements in the BST such that their sum is equal to the given target.
 
 Example 1:
 
 ```text
-Input: 
+Input:
     5
    / \
   3   6
@@ -22,7 +22,7 @@ Output: True
 Example 2:
 
 ```text
-Input: 
+Input:
     5
    / \
   3   6
@@ -34,11 +34,11 @@ Target = 28
 Output: False
 ```
 
-### 分析
+#### 分析
 
-这道题虽然输入的是一个 BST，但是核心解题思路还是不变的，我可以基于中序遍历获取 BST 对应的有序集合，然后就关联到 Two Sum 的基本解法。
+这道题虽然输入的是一个 BST，但是核心解题思路还是不变的，可以基于中序遍历获取 BST 对应的有序集合，然后关联到 Two Sum 的基本解法。
 
-### 实现
+#### 实现
 
 ```java
 public boolean findTarget(TreeNode root, int k) {

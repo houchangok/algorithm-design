@@ -1,4 +1,6 @@
-### 题目
+### Two Sum
+
+> - No.1, easy
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
@@ -13,9 +15,9 @@ Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 ```
 
-### 分析
+#### 分析
 
-该题的考点在于给定一个数target和一个数组nums，然后从数组nums中找到两个数之和等于target，返回这两个数的下标（返回一组即可）。 
+题目的意思在于给定一个数 target 和一个数组 nums，然后从数组 nums 中找到两个数之和等于 target，返回这两个数的下标（__返回一组即可__）。
 
 - 思路一
 
@@ -23,9 +25,9 @@ return [0, 1].
 
 - 思路二
 
-先将数组按从小到大排序，然后用两个指针，一个首指针和一个尾指针，然后从两边向中间遍历。因为排序后需要记录原先对应的下标，所以空间复杂度为O(n)，时间复杂度MAX(O(n), O(排序))。
+先将数组按从小到大排序，然后用两个指针，一个首指针和一个尾指针，然后从两边向中间遍历。因为排序后需要记录原先对应的下标，所以空间复杂度为 O(n)，时间复杂度 `MAX(O(n), O(排序))`。
 
-### 实现
+#### 实现
 
 - 公共接口
 
@@ -83,23 +85,19 @@ public int[] twoSum(int[] nums, int target) {
             results[0] = i;
             results[1] = nodes.get(1).id;
         }
-
         return results;
-
     }
 
     return results;
-
 }
 ```
 
-- 思路二
+- 思路二（基于排序）
 
 ```java
 public int[] twoSum(int[] nums, int target) {
 
     int[] result = new int[2];
-
     Node[] nodes = new Node[nums.length];
 
     // 重新构造数组
@@ -110,13 +108,11 @@ public int[] twoSum(int[] nums, int target) {
     // 从小到大排序
     Arrays.sort(nodes);
 
-    int left = 0, right = nums.length - 1;
-
     // 查找
+    int left = 0, right = nums.length - 1;
     int currentVal;
     while (left < right) {
         currentVal = nodes[left].val + nodes[right].val;
-        //System.out.println(currentVal);
         if (currentVal == target) {
             result[0] = nodes[left].id;
             result[1] = nodes[right].id;
@@ -129,6 +125,5 @@ public int[] twoSum(int[] nums, int target) {
     }
 
     return result;
-
 }
 ```
