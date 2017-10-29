@@ -1,8 +1,10 @@
-### 题目
+### ZigZag Conversion
+
+> No.6, medium
 
 The string `"PAYPALISHIRING"` is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
 
-```text
+```
 P   A   H   N
 A P L S I I G
 Y   I   R
@@ -11,19 +13,19 @@ Y   I   R
 And then read line by line: `"PAHNAPLSIIGYIR"`
 Write the code that will take a string and make this conversion given a number of rows:
 
-```text
+```
 string convert(string text, int nRows);
 ```
 
 `convert("PAYPALISHIRING", 3)` should return `"PAHNAPLSIIGYIR"`.
 
-### 分析
+#### 分析
 
 这道题目是一道找规律的题目，只要找到每一行分布的字符在原字符串中对应的下标即可。
 
 假设我们有25个字符，然后分成6行排列，对应的下标分布如下： 
 
-![image](https://github.com/ZhenchaoWang/zhenchaowang.github.io/blob/master/img/leetcode-6-1.png?raw=true)
+![image](https://github.com/procyon-lotor/procyon-lotor.github.io/blob/master/images/2016/leetcode-6-1.png?raw=false)
 
 左边图经过转换之后可以得到右边的图，这样就将垂直列作为一列（绿色），斜对角列作为一列（黄色），我们可以分开来处理上图中绿色列（奇数列）的坐标和黄色列（偶数列）的坐标：
 
@@ -33,7 +35,7 @@ string convert(string text, int nRows);
 偶数列：i + (numRows - 1) * (j + 1) - 2 * i
 ```
 
-### 实现
+#### 实现
 
 ```java
 public String convert(String s, int numRows) {

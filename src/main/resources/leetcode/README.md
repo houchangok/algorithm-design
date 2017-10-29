@@ -5,7 +5,7 @@
 3 | Longest Substring Without Repeating Characters | medium | 字符串 | √ | Y
 4 | Median of Two Sorted Arrays | hard | 数组&链表 | √ | Y
 5 | Longest Palindromic Substring | medium | 动态规划 | √ | Y
-6 | ZigZag Conversion | medium | | |
+6 | ZigZag Conversion | medium | 字符串 | |
 7 | Reverse Integer | easy | 细节题 | | Y
 8 | String to Integer (atoi) | medium | 细节题 | | Y
 9 | Palindrome Number | easy | 细节题 | | Y
