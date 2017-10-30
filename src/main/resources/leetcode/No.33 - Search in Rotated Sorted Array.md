@@ -1,14 +1,16 @@
-### 题目
+### Search in Rotated Sorted Array
+
+> No.33, medium
 
 Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
 
 (i.e., `0 1 2 4 5 6 7` might become `4 5 6 7 0 1 2`).
 
-You are given a target val to search. If found in the array return its index, otherwise return -1.
+You are given a target value to search. If found in the array return its index, otherwise return -1.
 
 You may assume no duplicate exists in the array.
 
-### 分析
+#### 分析
 
 题目的意思是指给定一个数组，这个数组原先是有序的，但是可能向左平移了一定的单位，导致比如 `0 1 2 4 5 6 7` 变成了 `4 5 6 7 0 1 2` 这样的排列，但是我们不知道向左到底平移了几格，然后在这样的数组中寻找目标数 target 的下标，如果找不到就返回 -1。
 
@@ -19,7 +21,7 @@ You may assume no duplicate exists in the array.
 1. 如果 nums[left] <= nums[middle]，则说明 nums[left, middle] 是有序的，如果 target 的值在这个范围内，则可以直接利用二分查找，如果不在这个范围内，则说明可能在 nums[middle+1, right] 范围内，但是这个子数组不一定是有序的，可能是类似于之前数组的一个子集，这个时候我们套用递归即可。
 2. 如果nums[left] > nums[middle]，这说明 nums[middle, right] 是有序的，接下去的解决思路同上。
 
-### 实现
+#### 实现
 
 ```java
 /**

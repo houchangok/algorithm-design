@@ -14,7 +14,7 @@ Returns the index of the first occurrence of needle in haystack, or -1 if needle
 
 #### 实现
 
-- 暴力枚举
+- 暴力枚举（推荐）
 
 ```java
 public int strStr(String haystack, String needle) {

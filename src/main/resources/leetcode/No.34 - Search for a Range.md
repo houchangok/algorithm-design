@@ -1,6 +1,8 @@
-### 题目
+### Search for a Range
 
-Given an array of integers sorted in ascending order, find the starting and ending position of a given target val.
+> No.34, medium
+
+Given an array of integers sorted in ascending order, find the starting and ending position of a given target value.
 
 Your algorithm's runtime complexity must be in the order of `O(log n)`.
 
@@ -8,17 +10,17 @@ If the target is not found in the array, return `[-1, -1]`.
 
 For example,
 
-Given `[5, 7, 7, 8, 8, 10]` and target val 8,
+Given `[5, 7, 7, 8, 8, 10]` and target value 8,
 
 return `[3, 4]`.
 
-### 分析
+#### 分析
 
 题目的意思是给定一个有序的数组和一个目标数字 target，找出 target 在数组中的下标范围，时间复杂度要求 `O(log n)`。
 
 这道题目显然是需要用二分查找来解决的，不过普通的二分查找只能返回目标值是否存在，这里需要找到的是目标值的范围，实际上也就是寻找左右边界，解题思路是我们可以先利用二分查找找到第一个目标值的位置，然后以此为界分别向左向右寻找左下界和右上界，当然这个检索的过程也是二分查找的过程，而不能是逐个比较的过程，这样会超时。向左检索时，如果当前位置的向左一个位置的值仍然是目标值，就继续二分查找，向右也是如此，直到找到一个值，它的左边的值不是目标值，或者当前下标已是数组边界为止。
 
-### 实现
+#### 实现
 
 ```java
 /**

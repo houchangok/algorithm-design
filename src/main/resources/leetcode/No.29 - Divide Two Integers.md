@@ -1,16 +1,18 @@
-### 题目
+### Divide Two Integers
+
+> No.29, medium
 
 Divide two integers without using multiplication, division and mod operator.
 
 __If it is overflow, return `MAX_INT`.__
 
-### 分析
+#### 分析
 
-不能使用乘、除，以及取模操作符，实现两个数之间的取模运算。
+题目的意思是不能使用乘、除，以及取模操作符，实现两个数之间的取模运算。
 
-这道题目实际上是考计算机的基本运算，我们都知道计算机是没有乘、除法的，我们平常的乘、除操作最终都还是转换成加、减，以及移位操作来运算，这里我们也可以利用减法来进行除运算，不过每次都减去一个除数的效率太低，所以我们可以在每次减完之后，对除数进行加倍运算（不能乘，还可以通过移位运算嘛）。
+题目实际上是考计算机的基本运算，我们都知道计算机是没有乘、除法的，我们平常的乘、除操作最终都还是转换成加、减，以及移位操作来运算，这里我们也可以利用减法来进行除运算，不过每次都减去一个除数的效率太低，所以我们可以在每次减完之后，对除数进行加倍运算（不能乘，还可以通过移位运算嘛）。
 
-### 实现
+#### 实现
 
 ```java
 /**
@@ -21,7 +23,6 @@ __If it is overflow, return `MAX_INT`.__
  * @return
  */
 public int divide(int dividend, int divisor) {
-
     if (dividend == 0 || divisor == 0) return 0;
 
     // 题目规定溢出时返回MAX_INT

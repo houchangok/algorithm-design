@@ -1,20 +1,22 @@
-### 题目
+### Remove Duplicates from Sorted Array II
+
+> No.80, medium
 
 Follow up for "Remove Duplicates":
 What if duplicates are allowed at most twice?
 
-For example,
+For example,  
 Given sorted array nums = [1,1,1,2,2,3],
 
 Your function should return length = 5, with the first five elements of nums being 1, 1, 2, 2 and 3. It doesn't matter what you leave beyond the new length.
 
-### 分析
+#### 分析
 
-对于一个有序数组，要求计算数据中非重复元素的长度（这里的重复定义为 3 个才算重复），同时要求重新组织数组，使前面的元素是不重复的。
+相对于 I 来说，本题对于重复的定义不再是 2 而是 3，也就是说当出现 3 次以上才认为是重复。
 
-这个题目还是比较简单的，主要考虑用一个变量 count 计数，当 count > 2 时才算重复。
+这个题目还是比较简单的，主要考虑用一个变量 count 计数，当 count > 2 时才算重复，同时要求重新组织数组，使前面的元素是不重复的。
 
-### 实现
+#### 实现
 
 ```java
 public int removeDuplicates(int[] nums) {
