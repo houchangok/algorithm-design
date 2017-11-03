@@ -1,4 +1,6 @@
-### 题目
+### Remove Duplicates from Sorted List
+
+> No.83, easy
 
 Given a sorted linked list, delete all duplicates such that each element appear only once.
 
@@ -8,11 +10,11 @@ Given 1->1->2, return 1->2.
 
 Given 1->1->2->3->3, return 1->2->3.
 
-### 分析
+#### 分析
 
-相对于 82 来说要简单很多。
+题目的意思是给定一个已排序的链表，然后从中删除重复的结点，考察的是链表指针的操作。
 
-### 实现
+#### 实现
 
 ```java
 public ListNode deleteDuplicates(ListNode head) {

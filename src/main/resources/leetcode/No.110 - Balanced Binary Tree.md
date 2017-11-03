@@ -8,6 +8,8 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
 
 #### 分析
 
+给定一棵二叉树，判断是否是平衡二叉树。
+
 #### 实现
 
 ```java

@@ -1,4 +1,6 @@
-### 题目
+### Simplify Path
+
+> No.71, medium
 
 Given an absolute path for a file (Unix-style), simplify it.
 
@@ -8,11 +10,14 @@ path = `"/home/", => "/home"`
 
 path = `"/a/./b/../../c/", => "/c"`
 
-### 分析
+#### 分析
 
-属于细节题，主要考虑两点，1) 当计算得到的路径已经前置溢出时，即已经在根路径之前时，直接以 “/” 代替；2) 如果存在多个联系的路径分隔符，则等同于一个。
+属于细节题，主要考虑两点：
 
-### 实现
+1. 当计算得到的路径已经前置溢出时，即已经在根路径之前时，直接以 “/” 代替
+2. 如果存在多个联系的路径分隔符，则等同于一个
+
+#### 实现
 
 ```java
 public String simplifyPath(String path) {

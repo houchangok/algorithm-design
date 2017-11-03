@@ -10,7 +10,7 @@ You may assume that nums1 has enough space (size that is greater or equal to m +
 
 #### 分析
 
-既然不允许使用额外的数组，所以可以利用nums1来存储结果，这个时候可以考虑从后往前遍历来避免数组中元素的移动。
+既然不允许使用额外的数组，所以可以利用nums1来存储结果，这个时候可以考虑 __从后往前遍历__ 来避免数组中元素的移动。
 
 #### 实现
 

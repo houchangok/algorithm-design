@@ -7,6 +7,7 @@ Given a binary tree, flatten it to a linked list in-place.
 For example, Given
 
 ```
+eg.
          1
         / \
        2   5
@@ -17,6 +18,7 @@ For example, Given
 The flattened tree should look like:
 
 ```
+eg.
    1
     \
      2
@@ -30,10 +32,12 @@ The flattened tree should look like:
              6
 ```
 
-Hints:
+Hints:  
 If you notice carefully in the flattened tree, each node's right child points to the next node of a pre-order traversal.
 
 #### 分析
+
+题目要求给定一棵二叉树，将这个二叉树按照先序遍历的顺序原地变为一个链表，我们只需要对树执行先序遍历操作，然后修改树的结点指向即可。
 
 #### 实现
 

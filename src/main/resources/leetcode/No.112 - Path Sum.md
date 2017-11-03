@@ -7,6 +7,7 @@ Given a binary tree and a sum, determine if the tree has a root-to-leaf path suc
 For example: Given the below binary tree and sum = 22,
 
 ```
+eg.
           5
          / \
         4   8
@@ -19,6 +20,8 @@ For example: Given the below binary tree and sum = 22,
 return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
 
 #### 分析
+
+题目要求给定一个值，判断树中是否存在一条由根结点到叶结点的路径，保证路径上值的和为指定的值。
 
 #### 实现
 

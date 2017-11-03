@@ -7,6 +7,7 @@ Given a binary tree and a sum, find all root-to-leaf paths where each path's sum
 For example: Given the below binary tree and sum = 22,
 
 ```
+eg.
       5
      / \
     4   8
@@ -26,6 +27,8 @@ return
 ```
 
 #### 分析
+
+给定一棵二叉树，找出所有由根结点到叶结点的路径，保证路径上的值之和等于指定的值。
 
 #### 实现
 

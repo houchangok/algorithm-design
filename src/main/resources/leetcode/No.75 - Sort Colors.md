@@ -1,4 +1,6 @@
-### 题目
+### Sort Colors
+
+> No.75, medium
 
 Given an array with n objects colored red, white or blue, sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.
 
@@ -8,7 +10,7 @@ __Note:__
 
 You are not suppose to use the library's sort function for this problem.
 
-### 分析
+#### 分析
 
 题目的意思是给定一个数组，仅包含 0， 1， 2 三种元素，分别代表红、白、蓝三种颜色，题目要求在不借助排序算法的前提下就，将数组中所有的元素按照红白蓝的顺序排序。
 
@@ -20,9 +22,9 @@ You are not suppose to use the library's sort function for this problem.
 
 我们可以遍历一遍数组，然后分别记录下 0、1、2 的数目，然后重新复写数组元素即可，这是一个比较讨巧的方法。
 
-### 实现
+#### 实现
 
-思路一实现如下：
+- 思路一
 
 ```java
 public void sortColors(int[] nums) {
@@ -52,3 +54,7 @@ public void sortColors(int[] nums) {
     }
 }
 ```
+
+- 思路二
+
+略

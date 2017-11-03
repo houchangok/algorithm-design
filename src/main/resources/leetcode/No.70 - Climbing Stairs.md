@@ -1,4 +1,6 @@
-### 题目
+### Climbing Stairs
+
+> No.70, easy
 
 You are climbing a stair case. It takes n steps to reach to the top.
 
@@ -6,7 +8,7 @@ Each time you can either climb 1 or 2 steps. In how many distinct ways can you c
 
 Note: Given n will be a positive integer.
 
-### 解析
+#### 解析
 
 属于经典的题目，爬楼梯，一次只能走 1 格或 2 格，问有多少种走法可以达到顶端。
 
@@ -16,7 +18,7 @@ Note: Given n will be a positive integer.
 
 我们可以计算出 dp[0] = 1, dp[1] = 2，所以最终的结果不难推导出。
 
-### 实现
+#### 实现
 
 ```java
 public int climbStairs(int n) {

@@ -1,24 +1,29 @@
-### 题目
+### Minimum Window Substring
+
+> No.76, hard
 
 Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
 
 For example,
+
 ```
 S = "ADOBECODEBANC"
 T = "ABC"
 Minimum window is "BANC".
 ```
 
-Note:
+Note:  
 If there is no such window in S that covers all characters in T, return the empty string "".
 
 If there are multiple such windows, you are guaranteed that there will always be only one unique minimum window in S.
 
-### 分析
+#### 分析
+
+题目的意思是给定一个字符串 S 和 T，从 S 中找出包含 T 中所有字符的长度最小的子字符串，如果不存在则返回空字符串。
 
 这个题目还是比较难的，解题的基本思想是利用一个 map 记录 T 中各个字符的个数，其目的是记录当前各类字符还剩余多少个没有处于窗口内，然后用两个指针，pre 始终指向当前窗口的最左端，i 用来遍历字符串，遇到不是目标字符串中的字符则直接跳过，如果是目标字符串中的字符，但是当前还有未进入窗口的字符，则 i 继续向前扩大窗口，否则就开始缩小窗口，即 pre 开始往右移动，pre 向右移动的过程中，如果指向的字符不是目标字符，则直接扔出窗外，如果是目标字符，则需要反映到 map 中，表示当前有目标字符出窗口。
 
-### 实现
+#### 实现
 
 ```java
 public String minWindow(String s, String t) {

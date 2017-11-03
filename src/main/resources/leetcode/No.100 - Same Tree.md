@@ -1,14 +1,16 @@
-### 题目
+### Same Tree
+
+> No.100, easy
 
 Given two binary trees, write a function to check if they are equal or not.
 
 Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
 
-### 分析
+#### 分析
 
-基本思路都是对两个树同时进行遍历，然后比较对应的结点是否都存在，且值相等。
+题目要求判断两棵树是否相同，基本思路都是对两个树同时进行遍历，然后比较对应的结点是否都存在，且值相等。
 
-### 实现
+#### 实现
 
 - 先序遍历
 

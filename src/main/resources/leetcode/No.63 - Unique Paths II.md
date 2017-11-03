@@ -1,4 +1,6 @@
-### 题目
+### Unique Paths II
+
+> No.63, medium
 
 Follow up for "Unique Paths":
 
@@ -21,15 +23,15 @@ The total number of unique paths is 2.
 
 Note: m and n will be at most 100.
 
-### 分析
+#### 分析
 
-题目相对于 Unique Paths 的区别在矩阵中增加了障碍，所以针对障碍需要专门处理：
+题目相对于 I 的区别在矩阵中增加了障碍，所以针对障碍需要专门处理：
 
-> 1. 如果只有一行，那么中间出现障碍，障碍之后的值都应该是0
-> 2. 如果只有一列，那么中间出现障碍，障碍之后的值都应该是0
-> 3. 其余情况，如果出现障碍，障碍所在位置的值应该是0
+> 1. 如果只有一行，那么中间出现障碍，障碍之后的值都应该是 0
+> 2. 如果只有一列，那么中间出现障碍，障碍之后的值都应该是 0
+> 3. 其余情况，如果出现障碍，障碍所在位置的值应该是 0
 
-### 实现
+#### 实现
 
 ```java
 public int uniquePathsWithObstacles(int[][] obstacleGrid) {

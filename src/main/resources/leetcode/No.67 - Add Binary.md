@@ -1,4 +1,6 @@
-### 题目
+### Add Binary
+
+> No.67, easy
 
 Given two binary strings, return their sum (also a binary string).
 
@@ -10,11 +12,11 @@ b = `"1"`
 
 Return `"100"`.
 
-### 分析
+#### 分析
 
 题目意思就是计算二进制sum，思路没啥好说的，属于细节题。
 
-### 实现
+#### 实现
 
 ```java
 public String addBinary(String a, String b) {

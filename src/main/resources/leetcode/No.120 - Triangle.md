@@ -22,6 +22,8 @@ Bonus point if you are able to do this using only O(n) extra space, where n is t
 
 #### 分析
 
+题目要求从一个矩阵中选择一条路径，保证路径上的值之和最小，需要注意的是题目并不是要选每一行的最小值，每次只能选择当前元素下一行临近的两个元素，即 [i + 1][j] 和 [i + 1][j + 1]，所以这道题需要自底而上来计算。
+
 #### 实现
 
 ```java

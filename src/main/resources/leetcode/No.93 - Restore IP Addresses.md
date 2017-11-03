@@ -1,4 +1,6 @@
-### 题目
+### Restore IP Addresses
+
+> No.93, medium
 
 Given a string containing only digits, restore it by returning all possible valid IP address combinations.
 
@@ -7,9 +9,11 @@ Given "25525511135",
 
 return `["255.255.11.135", "255.255.111.35"]`. (Order does not matter)
 
-### 分析
+#### 分析
 
-### 实现
+题目要求将给定的一个纯数字字符串拆分成多个合法的 “点分十进制” IP 字符串。这题可以采用递归的思想来解决，同时设定一个函数来判断当前的 IP 元素是否合法，即是否在 0~255 范围之内，同时不能是以 0 开头的正数。
+
+#### 实现
 
 ```java
 private List<String> result = new ArrayList<String>();
@@ -30,6 +34,12 @@ private void recursion(String s, int count, String prefix) {
     }
 }
 
+/**
+ * 判断是否是有效的 IP 元素值
+ *
+ * @param element
+ * @return
+ */
 private boolean isValid(String element) {
     if (element.startsWith("0")) return element.equals("0");
     int value = Integer.parseInt(element);

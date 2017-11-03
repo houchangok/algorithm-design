@@ -31,6 +31,12 @@ public class RestoreIpAddresses {
         }
     }
 
+    /**
+     * 判断是否是有效的 IP 元素值
+     *
+     * @param element
+     * @return
+     */
     private boolean isValid(String element) {
         if (element.startsWith("0")) return element.equals("0");
         int value = Integer.parseInt(element);

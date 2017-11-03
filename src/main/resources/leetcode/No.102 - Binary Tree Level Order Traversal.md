@@ -1,14 +1,38 @@
-### 题目
+### Binary Tree Level Order Traversal
+
+> No.102, medium
 
 Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
 
-### 分析
+For example:  
+Given binary tree `[3,9,20,null,null,15,7]`,
+
+```
+eg.
+    3
+   / \
+  9  20
+    /  \
+   15   7
+```
+
+return its level order traversal as:
+
+```
+[
+  [3],
+  [9,20],
+  [15,7]
+]
+```
+
+#### 分析
 
 题目要求实现二叉树的层序遍历，需要注意的是树不一定是完全二叉树，所以不能通过结点的数目来做分层。
 
 思路是可以定义一个数据结构来记录结点，和结点所在的层次，这里有一个技巧就是结点所在的层次与所在集合中的层次是相对应的。
 
-### 实现
+#### 实现
 
 ```java
 /**

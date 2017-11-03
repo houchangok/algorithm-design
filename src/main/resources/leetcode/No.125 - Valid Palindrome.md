@@ -16,6 +16,8 @@ For the purpose of this problem, we define empty string as valid palindrome.
 
 #### 分析
 
+题目的意思是给定一个字符串，忽略其中的非数字和字母字符，然后判断这个字符串是否是回文的。解题思路就是给定两个指正分别从左右往中间移动，遇到非期望字符则往前移动一格，并比较对应位置上的字符是否相同。
+
 #### 实现
 
 ```java

@@ -1,14 +1,16 @@
-### 题目
+### Maximum Depth of Binary Tree
+
+> No.104, easy
 
 Given a binary tree, find its maximum depth.
 
 The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
 
-### 分析
+#### 分析
 
-递归的完美体现。
+求二叉树的最大深度，递归的完美体现。
 
-### 实现
+#### 实现
 
 ```java
 public int maxDepth(TreeNode root) {

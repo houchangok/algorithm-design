@@ -1,6 +1,8 @@
-### 题目
+### Search a 2D Matrix
 
-Write an efficient algorithm that searches for a val in an m x n matrix. This matrix has the following properties:
+> No.74, medium
+
+Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
 
 Integers in each row are sorted from left to right.
 The first integer of each row is greater than the last integer of the previous row.
@@ -18,11 +20,11 @@ Consider the following matrix:
 
 Given `target = 3`, return `true`.
 
-### 分析
+#### 分析
 
 这道题目本质上是二分查找，只是输入的是一个二维矩阵，所以只需要控制好坐标转换就好了。
 
-### 实现
+#### 实现
 
 ```java
 public boolean searchMatrix(int[][] matrix, int target) {

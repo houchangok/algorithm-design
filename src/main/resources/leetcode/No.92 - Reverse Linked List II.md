@@ -1,4 +1,6 @@
-### 题目
+### Reverse Linked List II
+
+> No.92, medium
 
 Reverse a linked list from position m to n. Do it in-place and in one-pass.
 
@@ -12,9 +14,11 @@ Note:
 Given m, n satisfy the following condition:  
 1 ? m ? n ? length of list.
 
-### 分析
+#### 分析
 
-### 实现
+题目的意思是给定一个链表，和一个区间，然后该区间内的结点逆置。
+
+#### 实现
 
 ```java
 /**

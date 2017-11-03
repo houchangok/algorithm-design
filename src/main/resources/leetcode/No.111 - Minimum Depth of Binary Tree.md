@@ -8,6 +8,8 @@ The minimum depth is the number of nodes along the shortest path from the root n
 
 #### 分析
 
+求二叉树的最小深度，这道题并不是简单利用 Math.min 那么简单，最小深度是指根结点到一棵叶子结点的最短距离，如果简单使用 min 会将只有左孩子节点或右孩子节点的结点也考虑进去。
+
 #### 实现
 
 ```java
