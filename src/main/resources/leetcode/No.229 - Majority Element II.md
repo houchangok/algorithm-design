@@ -6,6 +6,7 @@ Given an integer array of size n, find all elements that appear more than `⌊ n
 
 #### 分析
 
+题目要求从给定数组中找出出现次数占比超过 1/3 的元素，还是投票法的应用。
 
 #### 实现
 

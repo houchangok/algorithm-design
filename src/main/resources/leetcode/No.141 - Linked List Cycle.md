@@ -8,6 +8,8 @@ Follow up: Can you solve it without using extra space?
 
 #### 分析
 
+题目要求判断一个链表是否存在环。我们可以选择两个指针，一个指针一次走一步，一个指针一次走两步，如果存在环路则这两个指针迟早会相遇。
+
 #### 实现
 
 ```java

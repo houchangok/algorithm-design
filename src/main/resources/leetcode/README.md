@@ -25,149 +25,150 @@
 23 | Merge k Sorted Lists | hard | 数组&链表 | √ | Y
 24 | Swap Nodes in Pairs | medium | 数组&链表 | √ | Y
 25 | Reverse Nodes in k-Group | hard | 数组&链表 | √ | Y
-26 | Remove Duplicates from Sorted Array | easy | 数组&链表 |
-27 | Remove Element | easy | 数组&链表 |
-28 | Implement strStr() | easy | 字符串 |
-29 | Divide Two Integers | medium | 细节题 |
-30 | | | |
-31 | Next Permutation | medium | 数组&链表 |
-32 | Longest Valid Parentheses | hard | 栈&队列 |
-33 | Search in Rotated Sorted Array | medium | 二分查找 |
-34 | Search for a Range | medium | 二分查找 |
-35 | Search Insert Position | easy | 二分查找 |
-36 | | | |
-37 | | | |
-38 | | | |
-39 | Combination Sum | medium | NP |
-40 | Combination Sum II | medium | NP |
-41 | First Missing Positive | hard | 数组&链表 |
-42 | Trapping Rain Water | hard | 数组&链表 |
-43 | Multiply Strings | medium | 数学问题 |
-44 | | | |
-45 | Jump Game II | hard | 贪心策略 |
-46 | Permutations | medium | 数组&链表 |
-47 | Permutations II | medium | 数组&链表 |
-48 | | | |
-49 | | | |
-50 | | | |
-51 | N-Queens | hard | | TODO
-52 | N-Queens II | hard | | TODO
-53 | Maximum Subarray | easy | 数组&链表 | |
+26 | Remove Duplicates from Sorted Array | easy | 数组&链表 | | Y
+27 | Remove Element | easy | 数组&链表 | | Y
+28 | Implement strStr() | easy | 字符串 | √ | Y
+29 | Divide Two Integers | medium | 细节题 | √ | Y
+30 | Substring with Concatenation of All Words | hard | | |
+31 | Next Permutation | medium | 数组&链表 | √ | Y
+32 | Longest Valid Parentheses | hard | 栈&队列 | √ | Y
+33 | Search in Rotated Sorted Array | medium | 二分查找 | √ | Y
+34 | Search for a Range | medium | 二分查找 | √ | Y
+35 | Search Insert Position | easy | 二分查找 | √ | Y
+36 | | | | |
+37 | | | | |
+38 | | | | |
+39 | Combination Sum | medium | NP | |
+40 | Combination Sum II | medium | NP | |
+41 | First Missing Positive | hard | 数组&链表 | √ | Y
+42 | Trapping Rain Water | hard | 数组&链表 | √ | Y
+43 | Multiply Strings | medium | 数学问题 | √ | Y
+44 | | | | |
+45 | Jump Game II | hard | 贪心策略 | √ | Y
+46 | Permutations | medium | 数组&链表 | | Y
+47 | Permutations II | medium | 数组&链表 | | Y
+48 | | | | |
+49 | | | | |
+50 | | | | |
+51 | N-Queens | hard | | TODO |
+52 | N-Queens II | hard | | TODO |
+53 | Maximum Subarray | easy | 数组&链表 | √ | Y
 54 | Spiral Matrix | medium | | TODO
-55 | Jump Game | medium | 贪心策略 |
-56 | Merge Intervals | medium | 数组&链表 |
-57 | Insert Interval | hard | | TODO
-58 | Length of Last Word | easy | 字符串 |
-59 | Spiral Matrix II | medium | | TODO
-60 | | | |
-61 | Rotate List | medium | 数组&链表 |
-62 | Unique Paths | medium | 动态规划 |
-63 | Unique Paths II | medium | 动态规划 |
-64 | Minimum Path Sum | medium | 动态规划 |
-65 | | | |
-66 | Plus One | easy | 数学问题 |
-67 | Add Binary | easy | 数学问题 |
-68 | | | |
-69 | | | | TODO
-70 | Climbing Stairs | easy | 动态规划 |
-71 | Simplify Path | medium | 细节题 |
-72 | Edit Distance | hard | 动态规划 |
-73 | | | | TODO
-74 | Search a 2D Matrix | medium | 二分查找 |
-75 | Sort Colors | medium | 数组&链表 |
-76 | Minimum Window Substring | hard |字符串 |
-77 | Combinations | medium | NP问题 |
-78 | Subsets | medium | NP问题 |
-79 | | | | TODO
-80 | Remove Duplicates from Sorted Array II | medium | 数组&链表 |
-81 | Search in Rotated Sorted Array II | medium | 二分查找 |
-82 | Remove Duplicates from Sorted List II | medium | 数组&链表 |
-83 | Remove Duplicates from Sorted List | easy | 数组&链表 |
-84 | | | | TODO
-85 | Maximal Rectangle | hard | 数组&链表 |
-86 | Partition List | medium | 数组&链表 |
-87 | | | | TODO
-88 | Merge Sorted Array | easy | 数组&链表 |
-89 | | | |
-90 | Subsets II | medium | NP问题 |
-91 | Decode Ways | medium | 动态规划 |
-92 | Reverse Linked List II | medium | 数组&链表 |
-93 | Restore IP Addresses | medium | 字符串 |
-94 | Binary Tree Inorder Traversal | medium | 树&图 |
-95 | | | | TODO
-96 | | | | TODO
-97 | Interleaving String | hard | 动态规划 |
-98 | Validate Binary Search Tree | medium | 树&图 |
-99 | | | | TODO
-100 | Same Tree | easy | 树&图 |
-101 | Symmetric Tree | easy | 树&图 |
-102 | Binary Tree Level Order Traversal | medium | 树&图 |
-103 | | | |
-104 | Maximum Depth of Binary Tree | easy | 树&图 |
-105 | Construct Binary Tree from Preorder and Inorder Traversal | medium | 树&图 |
-106 | Construct Binary Tree from Inorder and Postorder Traversal | medium | 树&图 |
-107 | Binary Tree Level Order Traversal II | easy | 树&图 |
-108 | Convert Sorted Array to Binary Search Tree | easy | 树&图 |
-109 | Convert Sorted List to Binary Search Tree | medium | 树&图 |
-110 | Balanced Binary Tree | easy | 树&图 |
-111 | Minimum Depth of Binary Tree | easy | 树&图 |
-112 | Path Sum | easy | 树&图 |
-113 | Path Sum II | medium | 树&图 |
-114 | Flatten Binary Tree to Linked List | medium | 树&图 |
-115 | | | | TODO
-116 | Populating Next Right Pointers in Each Node | medium | 树&图 |
-117 | Populating Next Right Pointers in Each Node II | medium | 树&图 |
-120 | Triangle | medium | 动态规划 |
-124 | | | | TODO
-125 | Valid Palindrome | easy | 字符串 |
-128 | Longest Consecutive Sequence | hard | 数组&链表 |
-129 | Sum Root to Leaf Numbers | medium | 树&图 |
-135 | Candy | hard | 数组&链表 |
-136 | Single Number | easy | 数组&链表 |
-137 | Single Number II| medium | 数组&链表 |
-138 | Copy List with Random Pointer | medium | 数组&链表 |
-139 | | | | TODO
-140 | | | | TODO
-141 | Linked List Cycle | easy | 数组&链表 |
-142 | Linked List Cycle II | medium | 数组&链表 |
-143 | | | | TODO
-144 | Binary Tree Preorder Traversal | medium | 树&图 |
-145 | Binary Tree Postorder Traversal | hard | 树&图 |
-146 | LRU Cache | hard | 设计题 |
-147 | Insertion Sort List | medium | 数组&链表 |
-148 | | | | TODO
-149 | | | |
-150 | Evaluate Reverse Polish Notation | medium | 数学问题  |
-151 | Reverse Words in a String | medium | 字符串 |
-152 | Maximum Product Subarray | medium | 数组&链表 |
-153 | Find Minimum in Rotated Sorted Array | medium | 二分查找 |
-154 | Find Minimum in Rotated Sorted Array II | hard | 二分查找 |
-155 | Min Stack | easy | 栈&队列 |
-160 | Intersection of Two Linked Lists | easy | 数组&链表 |
-165 | Compare Version Numbers | medium | 字符串 |
+55 | Jump Game | medium | 贪心策略 | √ | Y
+56 | Merge Intervals | medium | 数组&链表 | | Y
+57 | Insert Interval | hard | | TODO |
+58 | Length of Last Word | easy | 字符串 | | Y
+59 | Spiral Matrix II | medium | | TODO |
+60 | | | | |
+61 | Rotate List | medium | 数组&链表 | √ | Y
+62 | Unique Paths | medium | 动态规划 | √ | Y
+63 | Unique Paths II | medium | 动态规划 | √ | Y
+64 | Minimum Path Sum | medium | 动态规划 | √ | Y
+65 | | | | |
+66 | Plus One | easy | 数学问题 | | Y
+67 | Add Binary | easy | 数学问题 | | Y
+68 | | | | |
+69 | | | | TODO |
+70 | Climbing Stairs | easy | 动态规划 | √ | Y
+71 | Simplify Path | medium | 细节题 | | Y
+72 | Edit Distance | hard | 动态规划 | √ | Y
+73 | | | | TODO |
+74 | Search a 2D Matrix | medium | 二分查找 | | Y
+75 | Sort Colors | medium | 数组&链表 | | Y
+76 | Minimum Window Substring | hard | 字符串 | √ | Y
+77 | Combinations | medium | NP问题 | |
+78 | Subsets | medium | NP问题 | |
+79 | Word Search | medium | | TODO |
+80 | Remove Duplicates from Sorted Array II | medium | 数组&链表 | | Y
+81 | Search in Rotated Sorted Array II | medium | 二分查找 | √ | Y
+82 | Remove Duplicates from Sorted List II | medium | 数组&链表 | √ | Y
+83 | Remove Duplicates from Sorted List | easy | 数组&链表 | | Y
+84 | | | | TODO |
+85 | Maximal Rectangle | hard | 数组&链表 | √ | Y
+86 | Partition List | medium | 数组&链表 | √ | Y
+87 | Scramble String | hard | | TODO |
+88 | Merge Sorted Array | easy | 数组&链表 | √ | Y
+89 | | | | |
+90 | Subsets II | medium | NP问题 | |
+91 | Decode Ways | medium | 动态规划 | |
+92 | Reverse Linked List II | medium | 数组&链表 | | Y
+93 | Restore IP Addresses | medium | 字符串 | √ | Y
+94 | Binary Tree Inorder Traversal | medium | 树&图 | | Y
+95 | | | | TODO |
+96 | | | | TODO |
+97 | Interleaving String | hard | 动态规划 | √ | Y
+98 | Validate Binary Search Tree | medium | 树&图 | | Y
+99 | | | | TODO |
+100 | Same Tree | easy | 树&图 | √ | Y
+101 | Symmetric Tree | easy | 树&图 | √ | Y
+102 | Binary Tree Level Order Traversal | medium | 树&图 | | Y
+103 | | | | |
+104 | Maximum Depth of Binary Tree | easy | 树&图 | | Y
+105 | Construct Binary Tree from Preorder and Inorder Traversal | medium | 树&图 | √ | Y
+106 | Construct Binary Tree from Inorder and Postorder Traversal | medium | 树&图 | √ | Y
+107 | Binary Tree Level Order Traversal II | easy | 树&图 | | Y
+108 | Convert Sorted Array to Binary Search Tree | easy | 树&图 | √ | Y
+109 | Convert Sorted List to Binary Search Tree | medium | 树&图 | √ | Y
+110 | Balanced Binary Tree | easy | 树&图 | √ | Y
+111 | Minimum Depth of Binary Tree | easy | 树&图 | √ | Y
+112 | Path Sum | easy | 树&图 | | Y
+113 | Path Sum II | medium | 树&图 | | Y
+114 | Flatten Binary Tree to Linked List | medium | 树&图 | √ | Y
+115 | | | | TODO |
+116 | Populating Next Right Pointers in Each Node | medium | 树&图 | √ | Y
+117 | Populating Next Right Pointers in Each Node II | medium | 树&图 | √ | Y
+120 | Triangle | medium | 动态规划 | √ | Y
+124 | | | | TODO |
+125 | Valid Palindrome | easy | 字符串 | | Y
+128 | Longest Consecutive Sequence | hard | 数组&链表 | √ | Y
+129 | Sum Root to Leaf Numbers | medium | 树&图 | √ | Y
+135 | Candy | hard | 数组&链表 | √ | Y
+136 | Single Number | easy | 数组&链表 | | Y
+137 | Single Number II| medium | 数组&链表 | TODO |
+138 | Copy List with Random Pointer | medium | 数组&链表 | | Y
+139 | | | | TODO |
+140 | | | | TODO |
+141 | Linked List Cycle | easy | 数组&链表 | | Y
+142 | Linked List Cycle II | medium | 数组&链表 | | Y
+143 | Reorder List | medium | 数组&链表 | TODO |
+144 | Binary Tree Preorder Traversal | medium | 树&图 | | Y
+145 | Binary Tree Postorder Traversal | hard | 树&图 | | Y
+146 | LRU Cache | hard | 设计题 | |
+147 | Insertion Sort List | medium | 数组&链表 | | Y
+148 | | | | TODO |
+149 | | | | |
+150 | Evaluate Reverse Polish Notation | medium | 数学问题  | | Y
+151 | Reverse Words in a String | medium | 字符串 | | Y
+152 | Maximum Product Subarray | medium | 数组&链表 | √ | Y
+153 | Find Minimum in Rotated Sorted Array | medium | 二分查找 | √ | Y
+154 | Find Minimum in Rotated Sorted Array II | hard | 二分查找 | √ | Y
+155 | Min Stack | easy | 栈&队列 | | Y
+160 | Intersection of Two Linked Lists | easy | 数组&链表 | √ | Y
+165 | Compare Version Numbers | medium | 字符串 | |
 167 | Two Sum II - Input array is sorted | easy | K Sum | | Y
-169 | Majority Element | easy | 数组&链表 |
+169 | Majority Element | easy | 数组&链表 | √ | Y
 170 | Two Sum III - Data structure design | easy | K Sum | 未解锁 |
-172 | Factorial Trailing Zeroes | easy | 数学问题 |
-189 | Rotate Array | easy | 数组&链表 |
-198 | House Robber | easy | 动态规划 |
-199 | Binary Tree Right Side View | medium | 树&图 |
-200 | Number of Islands | medium | 数组&链表 |
-202 | Happy Number | easy | 数学问题 |
-203 | Remove Linked List Elements | easy | 数组&链表 |
-204 | Count Primes | easy | 数学问题 |
-206 | Reverse Linked List | easy | 数组&链表 |
-229 | Majority Element II | medium | 数组&链表 |
-234 | Palindrome Linked List | easy | 数组&链表 |
-239 | Sliding Window Maximum | hard | 栈&队列 |
-240 | Search a 2D Matrix II | medium | 二分查找 |
-257 | Binary Tree Paths | easy | 树&图 |
+172 | Factorial Trailing Zeroes | easy | 数学问题 | √ | Y
+189 | Rotate Array | easy | 数组&链表 | | Y
+198 | House Robber | easy | 动态规划 | √ | Y
+199 | Binary Tree Right Side View | medium | 树&图 | √ | Y
+200 | Number of Islands | medium | 数组&链表 | √ | Y
+202 | Happy Number | easy | 数学问题 | | Y
+203 | Remove Linked List Elements | easy | 数组&链表 | | Y
+204 | Count Primes | easy | 数学问题 | 埃拉托斯特尼筛法 | Y
+206 | Reverse Linked List | easy | 数组&链表 | | Y
+229 | Majority Element II | medium | 数组&链表 | √ | Y
+234 | Palindrome Linked List | easy | 数组&链表 | | Y
+239 | Sliding Window Maximum | hard | 栈&队列 | √ |
+240 | Search a 2D Matrix II | medium | 二分查找 | 讨巧的办法可以不用二分查找来做 | Y
+257 | Binary Tree Paths | easy | 树&图 | | Y
 259 | Three Sum Smaller | medium | K Sum | 未解锁 |
-260 | Single Number III | medium | 数组&链表 |
+260 | Single Number III | medium | 数组&链表 | |
 394 | Decode String | medium | 栈&队列 | √ | Y
-407 | Trapping Rain Water II | hard | 数组&链表 | TODO
-437 | Path Sum III | easy | 树&图 | TODO
+407 | Trapping Rain Water II | hard | 数组&链表 | TODO |
+437 | Path Sum III | easy | 树&图 | TODO |
 445 | Add Two Numbers II | medium | 数学问题 | | Y
 454 | Four Sum II | medium | K Sum | TODO |
 516 | Longest Palindromic Subsequence | medium | | TODO |
+628 | Maximum Product of Three Numbers | easy | 数组&链表 | TODO |
 653 | Two Sum IV - Input is a BST | easy | K Sum | | Y

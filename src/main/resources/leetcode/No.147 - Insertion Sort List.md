@@ -6,6 +6,8 @@ Sort a linked list using insertion sort.
 
 #### 分析
 
+基于插入排序的方式来对一个链表进行排序。
+
 #### 实现
 
 ```java

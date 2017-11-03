@@ -7,6 +7,7 @@ Given a binary tree, return all root-to-leaf paths.
 For example, given the following binary tree:
 
 ```
+eg.
    1
  /   \
 2     3
@@ -21,6 +22,8 @@ All root-to-leaf paths are:
 ```
 
 #### 分析
+
+题目要求返回二叉树所有从根结点到叶子结点的路径。
 
 #### 实现
 

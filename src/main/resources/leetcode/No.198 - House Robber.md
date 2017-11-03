@@ -8,6 +8,8 @@ Given a list of non-negative integers representing the amount of money of each h
 
 #### 分析
 
+题目的意思是从一个数组中选择一定的元素，不允许连续取邻接的两个，保证最后得到的数之和最大。
+
 #### 实现
 
 ```java
