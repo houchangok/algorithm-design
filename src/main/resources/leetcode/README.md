@@ -53,12 +53,12 @@
 51 | N-Queens | hard | | TODO |
 52 | N-Queens II | hard | | TODO |
 53 | Maximum Subarray | easy | 数组&链表 | √ | Y
-54 | Spiral Matrix | medium | | TODO
+54 | Spiral Matrix | medium | 数组&链表 | | Y
 55 | Jump Game | medium | 贪心策略 | √ | Y
 56 | Merge Intervals | medium | 数组&链表 | | Y
 57 | Insert Interval | hard | | TODO |
 58 | Length of Last Word | easy | 字符串 | | Y
-59 | Spiral Matrix II | medium | | TODO |
+59 | Spiral Matrix II | medium | 数组&链表 | | Y
 60 | | | | |
 61 | Rotate List | medium | 数组&链表 | √ | Y
 62 | Unique Paths | medium | 动态规划 | √ | Y
