@@ -68,7 +68,7 @@
 66 | Plus One | easy | 数学问题 | | Y
 67 | Add Binary | easy | 数学问题 | | Y
 68 | | | | |
-69 | | | | TODO |
+69 | Sqrt(x) | easy | 二分查找 |  | Y
 70 | Climbing Stairs | easy | 动态规划 | √ | Y
 71 | Simplify Path | medium | 细节题 | | Y
 72 | Edit Distance | hard | 动态规划 | √ | Y
