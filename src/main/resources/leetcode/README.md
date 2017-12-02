@@ -72,13 +72,13 @@
 70 | Climbing Stairs | easy | 动态规划 | √ | Y
 71 | Simplify Path | medium | 细节题 | | Y
 72 | Edit Distance | hard | 动态规划 | √ | Y
-73 | | | | TODO |
+73 | Set Matrix Zeroes | medium | 数组&链表 | |
 74 | Search a 2D Matrix | medium | 二分查找 | | Y
 75 | Sort Colors | medium | 数组&链表 | | Y
 76 | Minimum Window Substring | hard | 字符串 | √ | Y
 77 | Combinations | medium | NP问题 | |
 78 | Subsets | medium | NP问题 | |
-79 | Word Search | medium | | TODO |
+79 | Word Search | medium | | 深度优先 | |
 80 | Remove Duplicates from Sorted Array II | medium | 数组&链表 | | Y
 81 | Search in Rotated Sorted Array II | medium | 二分查找 | √ | Y
 82 | Remove Duplicates from Sorted List II | medium | 数组&链表 | √ | Y
@@ -157,6 +157,7 @@
 203 | Remove Linked List Elements | easy | 数组&链表 | | Y
 204 | Count Primes | easy | 数学问题 | 埃拉托斯特尼筛法 | Y
 206 | Reverse Linked List | easy | 数组&链表 | | Y
+212 | Word Search II | hard | 深度优先搜索 | |
 229 | Majority Element II | medium | 数组&链表 | √ | Y
 234 | Palindrome Linked List | easy | 数组&链表 | | Y
 239 | Sliding Window Maximum | hard | 栈&队列 | √ |
