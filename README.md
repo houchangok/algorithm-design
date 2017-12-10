@@ -1,3 +1,3 @@
-## 算法设计
+## Algorithm Design
 
-本项目主要用于个人算法学习！
+This project is only for personal learning.

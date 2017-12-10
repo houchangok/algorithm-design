@@ -78,12 +78,12 @@
 76 | Minimum Window Substring | hard | 字符串 | √ | Y
 77 | Combinations | medium | NP问题 | |
 78 | Subsets | medium | NP问题 | |
-79 | Word Search | medium | | 深度优先 | |
+79 | Word Search | medium | 深度优先 | |
 80 | Remove Duplicates from Sorted Array II | medium | 数组&链表 | | Y
 81 | Search in Rotated Sorted Array II | medium | 二分查找 | √ | Y
 82 | Remove Duplicates from Sorted List II | medium | 数组&链表 | √ | Y
 83 | Remove Duplicates from Sorted List | easy | 数组&链表 | | Y
-84 | | | | TODO |
+84 | Largest Rectangle in Histogram | hard | 栈&队列 | |
 85 | Maximal Rectangle | hard | 数组&链表 | √ | Y
 86 | Partition List | medium | 数组&链表 | √ | Y
 87 | Scramble String | hard | | TODO |
