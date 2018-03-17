@@ -1,4 +1,4 @@
-package org.zhenchao.general.string;
+package org.zhenchao.classic.string;
 
 /**
  * @author zhenchao.wang 2017-04-30 22:28

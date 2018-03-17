@@ -1,4 +1,4 @@
-package org.zhenchao.general.sort;
+package org.zhenchao.classic.sort;
 
 /**
  * 选择排序

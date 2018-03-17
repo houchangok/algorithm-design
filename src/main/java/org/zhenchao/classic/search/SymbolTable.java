@@ -1,4 +1,4 @@
-package org.zhenchao.general.search;
+package org.zhenchao.classic.search;
 
 /**
  * 符号表定义

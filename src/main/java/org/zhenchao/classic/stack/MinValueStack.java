@@ -1,4 +1,4 @@
-package org.zhenchao.stack;
+package org.zhenchao.classic.stack;
 
 import org.zhenchao.common.Stack;
 

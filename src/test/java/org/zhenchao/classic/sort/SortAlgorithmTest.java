@@ -1,4 +1,4 @@
-package org.zhenchao.general.sort;
+package org.zhenchao.classic.sort;
 
 import org.junit.Assert;
 import org.junit.Before;

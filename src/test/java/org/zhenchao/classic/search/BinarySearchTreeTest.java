@@ -1,4 +1,4 @@
-package org.zhenchao.general.search;
+package org.zhenchao.classic.search;
 
 import org.apache.commons.lang3.RandomUtils;
 import org.junit.Assert;

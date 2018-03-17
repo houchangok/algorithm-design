@@ -1,4 +1,4 @@
-package org.zhenchao.queue;
+package org.zhenchao.classic.queue;
 
 /**
  * 由两个栈构成的队列
