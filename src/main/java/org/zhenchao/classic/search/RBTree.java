@@ -63,7 +63,6 @@ public class RBTree<K extends Comparable<K>, V> {
     }
 
     private RBTreeNode<K, V> put(RBTreeNode<K, V> node, K key, V value) {
-
         if (null == node) {
             return new RBTreeNode<K, V>(key, value, RBTreeNode.Color.BLACK, 1);
         }
@@ -255,7 +254,7 @@ public class RBTree<K extends Comparable<K>, V> {
      *
      * @return
      */
-    public int size() {
+    public long size() {
         return this.size(root);
     }
 
@@ -265,7 +264,7 @@ public class RBTree<K extends Comparable<K>, V> {
      * @param node
      * @return
      */
-    private int size(RBTreeNode<K, V> node) {
+    private long size(RBTreeNode<K, V> node) {
         if (null == node) {
             return 0;
         }
@@ -279,40 +278,6 @@ public class RBTree<K extends Comparable<K>, V> {
      */
     public boolean isEmpty() {
         return root == null;
-    }
-
-    /**
-     * 左旋转
-     *
-     * @param node
-     * @return
-     */
-    private RBTreeNode<K, V> rotateLeft(RBTreeNode<K, V> node) {
-        RBTreeNode<K, V> parent = node.getRight();
-        node.setRight(parent.getLeft());
-        parent.setLeft(node);
-        parent.setColor(node.getColor());
-        node.setColor(RBTreeNode.Color.RED);
-        parent.setSize(node.getSize());
-        node.setSize(1 + this.size(node.getLeft()) + this.size(node.getRight()));
-        return parent;
-    }
-
-    /**
-     * 右旋转
-     *
-     * @param node
-     * @return
-     */
-    private RBTreeNode<K, V> rotateRight(RBTreeNode<K, V> node) {
-        RBTreeNode<K, V> parent = node.getLeft();
-        node.setLeft(parent.getRight());
-        parent.setRight(node);
-        parent.setColor(node.getColor());
-        node.setColor(RBTreeNode.Color.RED);
-        parent.setSize(node.getSize());
-        node.setSize(1 + this.size(node.getLeft()) + this.size(node.getRight()));
-        return parent;
     }
 
     /**
@@ -382,5 +347,40 @@ public class RBTree<K extends Comparable<K>, V> {
 
         node.setSize(this.size(node.getLeft()) + this.size(node.getRight()) + 1);
         return node;
+    }
+
+    /**
+     * 左旋转
+     * 红色右链接 -> 红色左链接
+     *
+     * @param node
+     * @return
+     */
+    private RBTreeNode<K, V> rotateLeft(RBTreeNode<K, V> node) {
+        RBTreeNode<K, V> parent = node.getRight();
+        node.setRight(parent.getLeft());
+        parent.setLeft(node);
+        parent.setColor(node.getColor());
+        node.setColor(RBTreeNode.Color.RED);
+        parent.setSize(node.getSize());
+        node.setSize(1 + this.size(node.getLeft()) + this.size(node.getRight()));
+        return parent;
+    }
+
+    /**
+     * 右旋转
+     *
+     * @param node
+     * @return
+     */
+    private RBTreeNode<K, V> rotateRight(RBTreeNode<K, V> node) {
+        RBTreeNode<K, V> parent = node.getLeft();
+        node.setLeft(parent.getRight());
+        parent.setRight(node);
+        parent.setColor(node.getColor());
+        node.setColor(RBTreeNode.Color.RED);
+        parent.setSize(node.getSize());
+        node.setSize(1 + this.size(node.getLeft()) + this.size(node.getRight()));
+        return parent;
     }
 }

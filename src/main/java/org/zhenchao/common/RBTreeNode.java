@@ -20,11 +20,11 @@ public class RBTreeNode<K extends Comparable<K>, V> {
     private Color color = Color.BLACK;
 
     /** 子树的节点数目 */
-    private int size;
+    private long size;
 
     private RBTreeNode<K, V> left, right;
 
-    public RBTreeNode(K key, V value, Color color, int size) {
+    public RBTreeNode(K key, V value, Color color, long size) {
         this.key = key;
         this.value = value;
         this.color = color;
@@ -58,11 +58,11 @@ public class RBTreeNode<K extends Comparable<K>, V> {
         return this;
     }
 
-    public int getSize() {
+    public long getSize() {
         return size;
     }
 
-    public RBTreeNode setSize(int size) {
+    public RBTreeNode setSize(long size) {
         this.size = size;
         return this;
     }
