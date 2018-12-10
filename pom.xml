@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.zhenchao</groupId>
-    <artifactId>algorithm-design</artifactId>
+    <artifactId>algorithm4j</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>algorithm-design</name>
+    <name>algorithm4j</name>
     <url>http://www.zhenchao.org</url>
 
     <properties>
