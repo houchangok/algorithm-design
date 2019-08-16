@@ -7,7 +7,7 @@ Given n non-negative integers representing an elevation map where the width of e
 For example,   
 Given `[0,1,0,2,1,0,1,3,2,1,2,1]`, return 6.
 
-![image](https://github.com/procyon-lotor/procyon-lotor.github.io/blob/master/images/2016/rainwatertrap.png?raw=false)
+![image](https://github.com/plotor/plotor.github.io/blob/master/images/2016/rainwatertrap.png?raw=false)
 
 #### 分析
 
