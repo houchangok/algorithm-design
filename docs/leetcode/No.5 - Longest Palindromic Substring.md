@@ -36,7 +36,7 @@ Output: "bb"
 
 所以我们可以定义一个 bool 型的二维数组，true 表示 i, j 之间对应的子串是回文的，false 则不是，如下图，1 表示 true，0 表示 false，`p[i, i]`, `p[i, i+ 1]` 的值是可以事先确定，即图中斜对角线中值，当这些值确定之后，我们就可以利用前面给的公式，按照图中红色箭头的指向，从上到下，从左到右，依次计算每个格子对应数值，当上三角区域所有的位置全部计算完毕之后，如果某一行中两个 1 之间的距离最大，那么这两个格子的坐标可以确定最长回文。
 
-![image](https://github.com/procyon-lotor/procyon-lotor.github.io/blob/master/images/2017/20170425221455.png?raw=false)
+![image](https://github.com/plotor/plotor.github.io/blob/master/images/2017/20170425221455.png?raw=false)
 
 - 思路二
 
@@ -44,7 +44,7 @@ Output: "bb"
 
 求解 __最长公共子序列__ 和 __最长公共子串__ 的思路是一样的，差别只是在最后遍历得到的二维数组的时候，最后我们只需要找斜线上连续的斜箭头（图中红色箭头）最长的一条对应的就是最长公共子串，而最长公共子序列需要从右下角最后一个元素开始，按照箭头的方向依次向前遍历，遇到斜箭头就记录，最后得到最长公共子序列。
 
-![image](https://github.com/procyon-lotor/procyon-lotor.github.io/blob/master/images/2017/20170425221632.png?raw=false)
+![image](https://github.com/plotor/plotor.github.io/blob/master/images/2017/20170425221632.png?raw=false)
 
 #### 实现
 
